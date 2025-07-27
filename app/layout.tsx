@@ -1,12 +1,12 @@
-import { Footer } from '@/components/sections/Footer';
-import { Header } from '@/components/sections/Header';
-import type { Metadata } from 'next';
-import './globals.css';
+import { Footer } from "@/components/sections/Footer";
+import { Header } from "@/components/sections/Header";
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'GAMZA - 프론트엔드 개발 동아리',
-  description: '프론트의 시작, GAMZA. 웹 개발의 기초부터 실무까지 함께 성장하는 프론트엔드 개발 동아리입니다.',
-  generator: 'v0.dev',
+  title: "GAMZA - 프론트엔드 개발 동아리",
+  description: "프로젝트의 시작, GAMZA. 모두가 함께 고민하고, 함께 성장합니다. 개발에 열정이 있는 당신을 기다립니다!",
+  generator: "v0.dev",
 };
 
 export default function RootLayout({
@@ -16,9 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="min-h-screen bg-gray-900 text-white">
+      <body className="min-h-screen text-white bg-[#0F1112]">
         <Header />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

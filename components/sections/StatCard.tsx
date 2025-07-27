@@ -1,6 +1,5 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useRef, useState } from "react";
 
 interface StatCardProps {
@@ -57,17 +56,29 @@ export function StatCard({ number, suffix, label }: StatCardProps) {
   }, [isVisible, number]);
 
   return (
-    <Card
+    <div
       ref={cardRef}
-      className="bg-gray-800 border-gray-700 text-center p-6 hover:border-blue-500/50 transition-colors"
+      className="relative text-center p-8 transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl"
+      style={{
+        background: '#272C2F',
+        border: '1px solid transparent',
+        backgroundImage: `
+          linear-gradient(#272C2F, #272C2F),
+          linear-gradient(315deg, 
+            rgba(128, 128, 128, 0.6) 0%, 
+            rgba(128, 128, 128, 0.7) 50%,
+            rgba(248, 250, 251, 0.7) 100%
+          )
+        `,
+        backgroundOrigin: 'border-box',
+        backgroundClip: 'padding-box, border-box'
+      }}
     >
-      <CardContent className="p-0">
-        <div className="text-3xl font-bold text-blue-400 mb-2">
-          {count}
-          {suffix}
-        </div>
-        <div className="text-gray-400 text-sm">{label}</div>
-      </CardContent>
-    </Card>
+      <div className="text-gray-400 text-base mb-4">{label}</div>
+      <div className="text-4xl md:text-5xl font-bold text-white">
+        {count}
+        <span className="text-3xl md:text-4xl">{suffix}</span>
+      </div>
+    </div>
   );
 }

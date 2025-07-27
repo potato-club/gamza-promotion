@@ -1,69 +1,106 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 
+const mainProjects = [
+  {
+    title: "프로젝트명",
+    description: "프로젝트 설명 간단하게-- 프로젝트 설명 간단하게-- 프로젝트 설명 간단하게-- 프로젝트 설명 간단하게--",
+    image: "/placeholder.svg?height=250&width=400&text=Project+1",
+  },
+  {
+    title: "프로젝트명",
+    description: "프로젝트 설명 간단하게-- 프로젝트 설명 간단하게-- 프로젝트 설명 간단하게-- 프로젝트 설명 간단하게--",
+    image: "/placeholder.svg?height=250&width=400&text=Project+2",
+  },
+];
+
+const subProjects = [
+  { image: "/placeholder.svg?height=200&width=200&text=Sub+1" },
+  { image: "/placeholder.svg?height=200&width=200&text=Sub+2" },
+  { image: "/placeholder.svg?height=200&width=200&text=Sub+3" },
+  { image: "/placeholder.svg?height=200&width=200&text=Sub+4" },
+  { image: "/placeholder.svg?height=200&width=200&text=Sub+5" },
+];
+
 export function ProjectResultsSection() {
   return (
-    <section className="px-6 py-16 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold mb-12">프로젝트 결과물</h2>
+    <section className="py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-16">
+          프로젝트 결과물
+        </h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-        <Card className="bg-gray-800 border-gray-700 overflow-hidden">
-          <CardContent className="p-0">
-            <div className="aspect-video bg-gray-700">
-              <Image
-                src="/placeholder.svg?height=250&width=400&text=E-Commerce+Platform"
-                alt="E-Commerce Platform"
-                width={400}
-                height={250}
-                className="w-full h-full object-cover opacity-50"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="font-semibold mb-2">쇼핑몰 플랫폼</h3>
-              <p className="text-gray-400 text-sm">
-                React와 Node.js를 활용한 풀스택 쇼핑몰 플랫폼 개발 프로젝트입니다. 사용자 인증, 결제 시스템, 관리자
-                페이지 등 실무에서 필요한 모든 기능을 구현했습니다.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {mainProjects.map((project, index) => (
+            <Card
+              key={index}
+              className="relative overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl"
+              style={{
+                background: '#272C2F',
+                border: '1px solid transparent',
+                backgroundImage: `
+                  linear-gradient(#272C2F, #272C2F),
+                  linear-gradient(315deg, 
+                  rgba(128, 128, 128, 0.6) 0%, 
+                  rgba(128, 128, 128, 0.7) 50%,
+                  rgba(248, 250, 251, 0.7) 100%
+                )
+                `,
+                backgroundOrigin: 'border-box',
+                backgroundClip: 'padding-box, border-box'
+              }}
+            >
+              <CardContent className="p-0">
+                <div className="aspect-video bg-gray-900/50">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={400}
+                    height={250}
+                    className="w-full h-full object-cover opacity-70"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-semibold text-lg text-white mb-2">{project.title}</h3>
+                  <p className="text-gray-400 text-sm">{project.description}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-        <Card className="bg-gray-800 border-gray-700 overflow-hidden">
-          <CardContent className="p-0">
-            <div className="aspect-video bg-gray-700">
-              <Image
-                src="/placeholder.svg?height=250&width=400&text=Task+Management+App"
-                alt="Task Management App"
-                width={400}
-                height={250}
-                className="w-full h-full object-cover opacity-50"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="font-semibold mb-2">업무 관리 도구</h3>
-              <p className="text-gray-400 text-sm">
-                팀 협업을 위한 업무 관리 도구입니다. 실시간 채팅, 파일 공유, 일정 관리 등의 기능을 통해 효율적인
-                팀워크를 지원합니다.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-        {[1, 2, 3, 4, 5].map((i) => (
-          <Card key={i} className="bg-gray-800 border-gray-700 aspect-square overflow-hidden">
-            <CardContent className="p-0 h-full">
-              <Image
-                src={`/placeholder.svg?height=200&width=200&text=Project+${i}`}
-                alt={`Project ${i}`}
-                width={200}
-                height={200}
-                className="w-full h-full object-cover opacity-50"
-              />
-            </CardContent>
-          </Card>
-        ))}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {subProjects.map((project, i) => (
+            <Card
+              key={i}
+              className="relative aspect-square overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl"
+              style={{
+                background: '#272C2F',
+                border: '1px solid transparent',
+                backgroundImage: `
+                  linear-gradient(#272C2F, #272C2F),
+                  linear-gradient(315deg, 
+                    rgba(248, 250, 251, 0.4) 0%, 
+                    rgba(128, 128, 128, 0.2) 50%,
+                    rgba(128, 128, 128, 0.1) 100%
+                  )
+                `,
+                backgroundOrigin: 'border-box',
+                backgroundClip: 'padding-box, border-box'
+              }}
+            >
+              <CardContent className="p-0 h-full">
+                <Image
+                  src={project.image}
+                  alt={`Sub project ${i + 1}`}
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover opacity-70"
+                />
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   );

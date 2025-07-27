@@ -1,52 +1,117 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Code, Star } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
+
+type RoleType = "Product Owner" | "Frontend" | "Backend" | "Designer";
+
+const roleContent = {
+  "Product Owner": {
+    image: "/placeholder.svg?height=300&width=300&text=Product+Owner",
+    description: "제품의 비전을 설정하고 개발 방향을 결정합니다. 사용자 요구사항을 분석하고 우선순위를 정하여 팀이 올바른 제품을 만들 수 있도록 가이드합니다."
+  },
+  "Frontend": {
+    image: "/placeholder.svg?height=300&width=300&text=Frontend",
+    description: "사용자가 직접 상호작용하는 웹 인터페이스를 개발합니다. React, Vue.js 등을 활용하여 직관적이고 반응형인 사용자 경험을 구현합니다."
+  },
+  "Backend": {
+    image: "/placeholder.svg?height=300&width=300&text=Backend",
+    description: "서버, 데이터베이스, API를 설계하고 구축합니다. 안정적이고 확장 가능한 시스템 아키텍처를 통해 서비스의 핵심 기능을 구현합니다."
+  },
+  "Designer": {
+    image: "/placeholder.svg?height=300&width=300&text=Designer",
+    description: "사용자 중심의 디자인을 통해 직관적인 UI/UX를 설계합니다. 브랜드 아이덴티티와 사용성을 고려한 시각적 요소들을 디자인합니다."
+  }
+};
 
 export function WhatWeDoSection() {
+  const [selectedRole, setSelectedRole] = useState<RoleType>("Frontend");
+
   return (
-    <section className="px-6 py-16 max-w-7xl mx-auto relative">
-      <div className="absolute top-10 left-10 w-12 h-12 bg-blue-500 rounded-full opacity-60"></div>
-      <div className="absolute top-32 right-20 w-8 h-8 bg-green-400 rounded-full opacity-60"></div>
-      <div className="absolute bottom-20 left-1/4 w-6 h-6 bg-purple-400 rounded-full opacity-60"></div>
+    <section className="py-24 sm:py-32 relative overflow-hidden">
+      {/* Floating decorative elements */}
+      <div className="absolute top-1/4 left-10 w-16 h-16 bg-cyan-500/20 rounded-full blur-2xl animate-pulse"></div>
+      <div className="absolute top-1/2 right-10 w-24 h-24 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div className="absolute bottom-1/4 left-1/3 w-12 h-12 bg-green-500/20 rounded-full blur-2xl animate-pulse delay-500"></div>
 
-      <h2 className="text-3xl font-bold mb-8">What we do</h2>
-      <div className="flex flex-wrap gap-3 mb-12">
-        <Badge variant="secondary" className="bg-gray-700 text-gray-300 px-4 py-2">
-          프론트엔드
-        </Badge>
-        <Badge className="bg-blue-600 hover:bg-blue-700 px-4 py-2">React</Badge>
-        <Badge variant="secondary" className="bg-gray-700 text-gray-300 px-4 py-2">
-          JavaScript
-        </Badge>
-        <Badge variant="secondary" className="bg-gray-700 text-gray-300 px-4 py-2">
-          TypeScript
-        </Badge>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-8">
+          What we do
+        </h2>
+        <div className="flex justify-center flex-wrap gap-3 mb-16">
+          <Badge
+            className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedRole === "Product Owner"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60"
+              }`}
+            onClick={() => setSelectedRole("Product Owner")}
+          >
+            Product Owner
+          </Badge>
+          <Badge
+            className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedRole === "Frontend"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60"
+              }`}
+            onClick={() => setSelectedRole("Frontend")}
+          >
+            Frontend
+          </Badge>
+          <Badge
+            className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedRole === "Backend"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60"
+              }`}
+            onClick={() => setSelectedRole("Backend")}
+          >
+            Backend
+          </Badge>
+          <Badge
+            className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedRole === "Designer"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60"
+              }`}
+            onClick={() => setSelectedRole("Designer")}
+          >
+            Designer
+          </Badge>
+        </div>
+
+        <Card
+          className="relative shadow-lg overflow-hidden backdrop-blur-sm w-4/5 mx-auto rounded-xl"
+          style={{
+            background: '#272C2F',
+            border: '1px solid transparent',
+            backgroundImage: `
+              linear-gradient(#272C2F, #272C2F),
+              linear-gradient(315deg, 
+              rgba(128, 128, 128, 0.6) 0%, 
+              rgba(128, 128, 128, 0.7) 50%,
+              rgba(248, 250, 251, 0.7) 100%
+              )
+            `,
+            backgroundOrigin: 'border-box',
+            backgroundClip: 'padding-box, border-box'
+          }}
+        >
+          <CardContent className="p-8">
+            <div className="aspect-video bg-gray-900/50 rounded-lg mb-6 flex items-center justify-center">
+              <Image
+                src={roleContent[selectedRole].image}
+                alt={`${selectedRole} showcase`}
+                width={300}
+                height={300}
+                className="rounded-lg opacity-70"
+              />
+            </div>
+            <p className="text-gray-300 text-center max-w-3xl mx-auto">
+              {roleContent[selectedRole].description}
+            </p>
+          </CardContent>
+        </Card>
       </div>
-
-      <Card className="bg-gray-800 border-gray-700 p-8 relative">
-        <div className="absolute top-4 right-4 w-16 h-16 bg-purple-500/20 rounded-lg flex items-center justify-center">
-          <Code className="w-8 h-8 text-purple-400" />
-        </div>
-        <div className="absolute bottom-4 left-4 w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-          <Star className="w-6 h-6 text-blue-400" />
-        </div>
-        <CardContent className="p-0">
-          <div className="aspect-video bg-gray-700 rounded-lg mb-6 flex items-center justify-center">
-            <Image
-              src="/placeholder.svg?height=300&width=500&text=GAMZA+Project+Showcase"
-              alt="Project showcase"
-              width={500}
-              height={300}
-              className="rounded-lg opacity-50"
-            />
-          </div>
-          <p className="text-gray-400 text-center">
-            프론트엔드 개발의 모든 것을 배우고 실습합니다. — 기초부터 고급 기술까지 체계적인 커리큘럼으로 — 실무진과
-            함께하는 프로젝트 경험을 통해 — 개발자로서의 역량을 키워나갑니다.
-          </p>
-        </CardContent>
-      </Card>
     </section>
   );
 }

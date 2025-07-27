@@ -1,34 +1,30 @@
-import { MessageSquare, Trophy, Users } from "lucide-react";
+import { Github } from "lucide-react";
+import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-800 px-6 py-12 max-w-7xl mx-auto">
-      <div className="flex items-center justify-between">
-        <div>
-          <h3 className="text-2xl font-bold mb-2">GAMZA</h3>
-          <p className="text-gray-400 text-sm mb-4">프론트엔드 개발 동아리</p>
-          <div className="flex items-center space-x-4 text-gray-400 text-sm">
-            <span>© 2024 GAMZA</span>
-            <span>•</span>
-            <a href="#" className="hover:text-white transition-colors">
-              개인정보처리방침
-            </a>
-            <span>•</span>
-            <a href="#" className="hover:text-white transition-colors">
-              이용약관
-            </a>
-          </div>
+    <footer className="border-t border-gray-800/50">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-6 py-12 px-6 md:flex-row">
+        <div className="text-center md:text-left">
+          <h3 className="text-xl font-bold mb-1">GAMZA</h3>
+          <p className="text-gray-400 text-sm mb-2">
+            모두가 함께 고민하고, 함께 성장합니다. 개발에 열정이 있는 당신을 기다립니다.
+          </p>
+          <p className="text-xs text-gray-500">© 2025 GAMZA. All Rights Reserved.</p>
         </div>
-        <div className="flex space-x-4">
-          <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
-            <Users className="w-4 h-4" />
-          </div>
-          <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
-            <MessageSquare className="w-4 h-4" />
-          </div>
-          <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
-            <Trophy className="w-4 h-4" />
-          </div>
+        <div className="flex items-center gap-6">
+          <Link href="#" className="text-sm text-gray-400 hover:text-white transition-colors">
+            소개
+          </Link>
+          <Link href="/projects" className="text-sm text-gray-400 hover:text-white transition-colors">
+            프로젝트
+          </Link>
+          <Link href="https://app.gamzatech.site/" className="text-sm text-gray-400 hover:text-white transition-colors">
+            블로그
+          </Link>
+          <Link href="https://github.com/potato-club" aria-label="Github" className="text-gray-400 hover:text-white transition-colors">
+            <Github className="h-6 w-6" />
+          </Link>
         </div>
       </div>
     </footer>
