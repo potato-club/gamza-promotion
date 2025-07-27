@@ -8,26 +8,29 @@ on:
 
 jobs:
   sync:
-    name: Sync develop to forked repo
+    name: Sync to forked repo
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout develop
+      - name: Checkout branch
         uses: actions/checkout@v4
-        with: 
+        with:
+          # 이벤트가 발생한 브랜치(main 또는 develop)를 동적으로 체크아웃합니다.
+          ref: ${{ github.ref }}
           token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
           fetch-depth: 0
-          ref: develop
 
-      - name: Add remote-url
+      - name: Add remote-url and git config
         run: |
           git remote add forked-repo https://tnemnorivnelee:${{ secrets.PERSONAL_GITHUB_TOKEN }}@github.com/tnemnorivnelee/gamza-promotion
-          git config user.name tnemnorivnelee
-          git config user.email tnemnorivnelee@gmail.com
+          git config user.name "tnemnorivnelee"
+          git config user.email "tnemnorivnelee@gmail.com"
 
-      - name: Push develop to forked repo
+      - name: Push to forked repo
         run: |
-          git push -f forked-repo develop
+          # 현재 체크아웃된 브랜치를 같은 이름의 원격 브랜치로 강제 푸시합니다.
+          # github.ref_name은 'main' 또는 'develop' 같은 브랜치 이름만 포함합니다.
+          git push -f forked-repo ${{ github.ref_name }}:${{ github.ref_name }}
 
       - name: Clean up
         run: |
