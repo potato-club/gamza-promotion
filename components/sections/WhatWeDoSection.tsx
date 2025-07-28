@@ -32,7 +32,7 @@ export function WhatWeDoSection() {
   return (
     <section className="py-24 sm:py-32 relative overflow-hidden">
       {/* Floating decorative icons */}
-      <div className="absolute top-56 left-72  w-14 h-14 animate-float">
+      <div className="absolute top-56 left-72  w-14 h-14 animate-float hidden md:block">
         <Image
           src="/WhatWedoIcon1.svg"
           alt="Decorative icon 1"
@@ -40,7 +40,7 @@ export function WhatWeDoSection() {
           height={200}
         />
       </div>
-      <div className="absolute top-32 right-32 w-64 h-14  animate-float-delayed">
+      <div className="absolute top-32 right-32 w-64 h-14  animate-float-delayed hidden md:block">
         <Image
           src="/WhatWedoIcon2.svg"
           alt="Decorative icon 2"
@@ -48,7 +48,7 @@ export function WhatWeDoSection() {
           height={200}
         />
       </div>
-      <div className="absolute bottom-96 left-40 w-64 h-12 animate-float-slow">
+      <div className="absolute bottom-96 left-40 w-64 h-12 animate-float-slow hidden md:block">
         <Image
           src="/WhatWedoIcon3.svg"
           alt="Decorative icon 3"
@@ -56,7 +56,7 @@ export function WhatWeDoSection() {
           height={200}
         />
       </div>
-      <div className="absolute bottom-36 right-52 w-20 h-20 animate-float">
+      <div className="absolute bottom-36 right-52 w-20 h-20 animate-float hidden md:block">
         <Image
           src="/WhatWedoIcon4.svg"
           alt="Decorative icon 4"
