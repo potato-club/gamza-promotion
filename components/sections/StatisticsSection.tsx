@@ -2,7 +2,7 @@ import { StatCard } from "./StatCard";
 
 export function StatisticsSection() {
   return (
-    <section className="py-20 sm:py-24">
+    <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 lg:px-7">
         <div className="mx-auto max-w-xl lg:max-w-5xl">
           <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-14">

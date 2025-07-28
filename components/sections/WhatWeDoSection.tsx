@@ -30,7 +30,7 @@ export function WhatWeDoSection() {
   const [selectedRole, setSelectedRole] = useState<RoleType>("Frontend");
 
   return (
-    <section className="py-20 sm:py-24 relative overflow-hidden">
+    <section className="py-24 sm:py-32 relative overflow-hidden">
       {/* Floating decorative elements */}
       <div className="absolute top-1/4 left-9 w-14 h-14 bg-cyan-500/20 rounded-full blur-2xl animate-pulse"></div>
       <div className="absolute top-1/2 right-9 w-20 h-20 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
