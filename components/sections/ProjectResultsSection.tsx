@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 const mainProjects = [
   {
@@ -17,9 +18,12 @@ const mainProjects = [
 const subProjects = [
   { image: "/placeholder.svg?height=200&width=200&text=Sub+1" },
   { image: "/placeholder.svg?height=200&width=200&text=Sub+2" },
-  { image: "/placeholder.svg?height=200&width=200&text=Sub+3" },
-  { image: "/placeholder.svg?height=200&width=200&text=Sub+4" },
-  { image: "/placeholder.svg?height=200&width=200&text=Sub+5" },
+  // { image: "/placeholder.svg?height=200&width=200&text=Sub+3" },
+  // { image: "/placeholder.svg?height=200&width=200&text=Sub+4" },
+  // { image: "/placeholder.svg?height=200&width=200&text=Sub+5" },
+  // { image: "/placeholder.svg?height=200&width=200&text=Sub+6" },
+  // { image: "/placeholder.svg?height=200&width=200&text=Sub+7" },
+  // { image: "/placeholder.svg?height=200&width=200&text=Sub+8" },
 ];
 
 export function ProjectResultsSection() {
@@ -68,13 +72,23 @@ export function ProjectResultsSection() {
             </Card>
           ))}
         </div>
+      </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+      {/* Marquee가 화면 전체 폭으로 표시되도록 컨테이너 밖으로 분리 */}
+      <div className="w-full">
+        <Marquee
+          speed={80}
+          pauseOnHover={true}
+          className="overflow-hidden"
+          autoFill={true}
+        >
           {subProjects.map((project, i) => (
             <Card
               key={i}
-              className="relative aspect-square overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl"
+              className="relative aspect-square overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl mx-2"
               style={{
+                width: "180px",
+                height: "180px",
                 background: '#272C2F',
                 border: '1px solid transparent',
                 backgroundImage: `
@@ -93,14 +107,14 @@ export function ProjectResultsSection() {
                 <Image
                   src={project.image}
                   alt={`Sub project ${i + 1}`}
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover opacity-70"
+                  width={180}
+                  height={180}
+                  className="w-full h-full object-cover opacity-70 rounded-xl"
                 />
               </CardContent>
             </Card>
           ))}
-        </div>
+        </Marquee>
       </div>
     </section>
   );
