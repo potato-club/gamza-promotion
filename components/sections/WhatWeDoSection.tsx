@@ -31,10 +31,39 @@ export function WhatWeDoSection() {
 
   return (
     <section className="py-24 sm:py-32 relative overflow-hidden">
-      {/* Floating decorative elements */}
-      <div className="absolute top-1/4 left-9 w-14 h-14 bg-cyan-500/20 rounded-full blur-2xl animate-pulse"></div>
-      <div className="absolute top-1/2 right-9 w-20 h-20 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-10 h-10 bg-green-500/20 rounded-full blur-2xl animate-pulse delay-500"></div>
+      {/* Floating decorative icons */}
+      <div className="absolute top-56 left-72  w-14 h-14 animate-float">
+        <Image
+          src="/WhatWedoIcon1.svg"
+          alt="Decorative icon 1"
+          width={200}
+          height={200}
+        />
+      </div>
+      <div className="absolute top-32 right-32 w-64 h-14  animate-float-delayed">
+        <Image
+          src="/WhatWedoIcon2.svg"
+          alt="Decorative icon 2"
+          width={200}
+          height={200}
+        />
+      </div>
+      <div className="absolute bottom-96 left-40 w-64 h-12 animate-float-slow">
+        <Image
+          src="/WhatWedoIcon3.svg"
+          alt="Decorative icon 3"
+          width={200}
+          height={200}
+        />
+      </div>
+      <div className="absolute bottom-36 right-52 w-20 h-20 animate-float">
+        <Image
+          src="/WhatWedoIcon4.svg"
+          alt="Decorative icon 4"
+          width={200}
+          height={200}
+        />
+      </div>
 
       <div className="mx-auto max-w-6xl px-5 lg:px-7">
         <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-7">
