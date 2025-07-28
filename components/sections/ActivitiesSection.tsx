@@ -26,16 +26,16 @@ const activities = [
 
 export function ActivitiesSection() {
   return (
-    <section className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-16">
+    <section className="py-20 sm:py-24">
+      <div className="mx-auto max-w-6xl px-5 lg:px-7">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-14">
           활동 내용
         </h2>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
           {activities.map((activity) => (
             <Card
               key={activity.title}
-              className="relative p-8 text-center transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl"
+              className="relative p-7 text-center transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl"
               style={{
                 background: '#272C2F',
                 border: '1px solid transparent',

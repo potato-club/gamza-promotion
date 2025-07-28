@@ -65,16 +65,16 @@ export function StatCard({ number, suffix, label }: StatCardProps) {
         backgroundImage: `
           linear-gradient(#272C2F, #272C2F),
           linear-gradient(315deg, 
-            rgba(128, 128, 128, 0.6) 0%, 
-            rgba(128, 128, 128, 0.7) 50%,
-            rgba(248, 250, 251, 0.7) 100%
+            rgba(248, 250, 251, 0.4) 0%, 
+            rgba(128, 128, 128, 0.2) 50%,
+            rgba(128, 128, 128, 0.1) 100%
           )
         `,
         backgroundOrigin: 'border-box',
         backgroundClip: 'padding-box, border-box'
       }}
     >
-      <div className="text-gray-400 text-base mb-4">{label}</div>
+      <div className="text-gray-400 text-sm mb-2">{label}</div>
       <div className="text-4xl md:text-5xl font-bold text-white">
         {count}
         <span className="text-3xl md:text-4xl">{suffix}</span>

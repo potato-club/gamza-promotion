@@ -30,19 +30,19 @@ export function WhatWeDoSection() {
   const [selectedRole, setSelectedRole] = useState<RoleType>("Frontend");
 
   return (
-    <section className="py-24 sm:py-32 relative overflow-hidden">
+    <section className="py-20 sm:py-24 relative overflow-hidden">
       {/* Floating decorative elements */}
-      <div className="absolute top-1/4 left-10 w-16 h-16 bg-cyan-500/20 rounded-full blur-2xl animate-pulse"></div>
-      <div className="absolute top-1/2 right-10 w-24 h-24 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-12 h-12 bg-green-500/20 rounded-full blur-2xl animate-pulse delay-500"></div>
+      <div className="absolute top-1/4 left-9 w-14 h-14 bg-cyan-500/20 rounded-full blur-2xl animate-pulse"></div>
+      <div className="absolute top-1/2 right-9 w-20 h-20 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div className="absolute bottom-1/4 left-1/3 w-10 h-10 bg-green-500/20 rounded-full blur-2xl animate-pulse delay-500"></div>
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-8">
+      <div className="mx-auto max-w-6xl px-5 lg:px-7">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-7">
           What we do
         </h2>
-        <div className="flex justify-center flex-wrap gap-3 mb-16">
+        <div className="flex justify-center flex-wrap gap-3 mb-14">
           <Badge
-            className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedRole === "Product Owner"
+            className={`px-3 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedRole === "Product Owner"
               ? "bg-blue-500 text-white"
               : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60"
               }`}
@@ -51,7 +51,7 @@ export function WhatWeDoSection() {
             Product Owner
           </Badge>
           <Badge
-            className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedRole === "Frontend"
+            className={`px-3 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedRole === "Frontend"
               ? "bg-blue-500 text-white"
               : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60"
               }`}
@@ -60,7 +60,7 @@ export function WhatWeDoSection() {
             Frontend
           </Badge>
           <Badge
-            className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedRole === "Backend"
+            className={`px-3 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedRole === "Backend"
               ? "bg-blue-500 text-white"
               : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60"
               }`}
@@ -69,7 +69,7 @@ export function WhatWeDoSection() {
             Backend
           </Badge>
           <Badge
-            className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedRole === "Designer"
+            className={`px-3 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedRole === "Designer"
               ? "bg-blue-500 text-white"
               : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60"
               }`}
@@ -96,13 +96,13 @@ export function WhatWeDoSection() {
             backgroundClip: 'padding-box, border-box'
           }}
         >
-          <CardContent className="p-8">
-            <div className="aspect-video bg-gray-900/50 rounded-lg mb-6 flex items-center justify-center">
+          <CardContent className="p-7">
+            <div className="aspect-video bg-gray-900/50 rounded-lg mb-5 flex items-center justify-center">
               <Image
                 src={roleContent[selectedRole].image}
                 alt={`${selectedRole} showcase`}
-                width={300}
-                height={300}
+                width={270}
+                height={270}
                 className="rounded-lg opacity-70"
               />
             </div>

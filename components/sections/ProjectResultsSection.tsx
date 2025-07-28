@@ -24,13 +24,13 @@ const subProjects = [
 
 export function ProjectResultsSection() {
   return (
-    <section className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-16">
+    <section className="py-20 sm:py-24">
+      <div className="mx-auto max-w-6xl px-5 lg:px-7">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-14">
           프로젝트 결과물
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 mb-11">
           {mainProjects.map((project, index) => (
             <Card
               key={index}
@@ -60,7 +60,7 @@ export function ProjectResultsSection() {
                     className="w-full h-full object-cover opacity-70"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-5">
                   <h3 className="font-semibold text-lg text-white mb-2">{project.title}</h3>
                   <p className="text-gray-400 text-sm">{project.description}</p>
                 </div>
@@ -69,7 +69,7 @@ export function ProjectResultsSection() {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           {subProjects.map((project, i) => (
             <Card
               key={i}
