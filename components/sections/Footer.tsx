@@ -13,8 +13,8 @@ export function Footer() {
           <p className="text-xs text-gray-500">© 2025 GAMZA. All Rights Reserved.</p>
         </div>
         <div className="flex items-center gap-6">
-          <Link href="#" className="text-sm text-gray-400 hover:text-white transition-colors">
-            소개
+          <Link href="/" className="text-sm text-gray-400 hover:text-white transition-colors">
+            홈
           </Link>
           <Link href="/projects" className="text-sm text-gray-400 hover:text-white transition-colors">
             프로젝트

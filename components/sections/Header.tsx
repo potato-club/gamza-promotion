@@ -8,17 +8,19 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full bg-transparent">
       <div className="container mx-auto flex h-16 w-full items-center justify-between px-6">
         <div className="w-8 h-8">
-          <Image
-            src="/gamzaLogo.svg"
-            alt="Gamza Logo"
-            width={32}
-            height={32}
-            className="w-full h-full object-contain"
-          />
+          <Link href="/">
+            <Image
+              src="/gamzaLogo.svg"
+              alt="Gamza Logo"
+              width={32}
+              height={32}
+              className="w-full h-full object-contain"
+            />
+          </Link>
         </div>
         <div className="flex items-center space-x-8">
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
+            <Link href="/" className="text-gray-300 hover:text-white transition-colors text-sm">
               홈
             </Link>
             <Link href="/projects" className="text-gray-300 hover:text-white transition-colors text-sm">
