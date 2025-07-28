@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "GAMZA - 프론트엔드 개발 동아리",
   description: "프로젝트의 시작, GAMZA. 모두가 함께 고민하고, 함께 성장합니다. 개발에 열정이 있는 당신을 기다립니다!",
-  generator: "v0.dev",
+  generator: "이경환",
 };
 
 export default function RootLayout({

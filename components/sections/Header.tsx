@@ -1,12 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-transparent">
       <div className="container mx-auto flex h-16 w-full items-center justify-between px-6">
-        <div className="w-8 h-8 bg-white rounded-sm"></div>
+        <div className="w-8 h-8">
+          <Image
+            src="/gamzaLogo.svg"
+            alt="Gamza Logo"
+            width={32}
+            height={32}
+            className="w-full h-full object-contain"
+          />
+        </div>
         <div className="flex items-center space-x-8">
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
