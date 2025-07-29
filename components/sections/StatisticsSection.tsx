@@ -9,10 +9,10 @@ export function StatisticsSection() {
             숫자로 보는 감자
           </h2>
           <div className="grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-4">
-            <StatCard number={10} suffix="년" label="운영 기간" />
+            <StatCard number={6} suffix="년" label="운영 기간" />
             <StatCard number={9} suffix="기" label="현재 기수" />
-            <StatCard number={21} suffix="명" label="활동 인원" />
-            <StatCard number={30} suffix="+" label="완성 프로젝트" />
+            <StatCard number={56} suffix="명" label="활동 인원" />
+            <StatCard number={30} suffix="+" label="프로젝트 수" />
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
 import Marquee from "react-fast-marquee";
 
 const mainProjects = [
@@ -118,6 +119,14 @@ export function ProjectResultsSection() {
       </div>
 
       {/* 더보기 버튼 추가 */}
+      <div className="text-center mt-10">
+        <Link
+          href="/projects"
+          className="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300"
+        >
+          더 많은 프로젝트 보기
+        </Link>
+      </div>
     </section>
   );
 }

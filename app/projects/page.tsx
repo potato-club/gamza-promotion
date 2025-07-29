@@ -86,7 +86,7 @@ const projects = [
 ];
 
 export default function ProjectsPage() {
-  const [selectedCategory, setSelectedCategory] = useState("WEB");
+  const [selectedCategory, setSelectedCategory] = useState("ALL");
 
   const filteredProjects =
     selectedCategory === "ALL" ? projects : projects.filter((project) => project.category === selectedCategory);
@@ -98,7 +98,7 @@ export default function ProjectsPage() {
         <h1 className="text-3xl sm:text-4xl font-bold text-center mb-14 tracking-tight">프로젝트</h1>
 
         {/* Category Filter */}
-        <div className="flex justify-center space-x-3 mb-14">
+        {/* <div className="flex justify-center space-x-3 mb-14">
           <Badge
             className={`px-3 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 ${selectedCategory === "ALL"
               ? "bg-blue-500 text-white"
@@ -126,7 +126,7 @@ export default function ProjectsPage() {
           >
             APP
           </Badge>
-        </div>
+        </div> */}
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
