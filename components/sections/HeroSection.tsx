@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ApplyButton } from "../ui/apply-button";
 
 export function HeroSection() {
   return (
@@ -19,13 +18,7 @@ export function HeroSection() {
           개발에 <span className="font-extrabold">열정</span>이 있는 당신을 기다립니다!
         </p>
         <div className="flex justify-center md:justify-start">
-          <Button
-            className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-8 py-3 text-base font-medium animate-fade-in hover:scale-105 transition-transform"
-            style={{ animationDelay: "1s" }}
-          >
-            10기 지원하기
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <ApplyButton />
         </div>
       </div>
     </section>

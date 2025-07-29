@@ -55,21 +55,19 @@ export function StatCard({ number, suffix, label }: StatCardProps) {
       }}
     >
       <div className="text-gray-400 text-xs mb-1">{label}</div>
-      <div className="text-3xl md:text-4xl font-bold text-white leading-none">
+      <div className="text-3xl md:text-4xl font-bold text-white">
         {shouldAnimate ? (
-          <>
-            <SlotCounter
-              value={number}
-              duration={2}
-              animateUnchanged={true}
-              useMonospaceWidth={true}
-              charClassName="inline-block align-baseline"
-            />
-            <span className="align-baseline">{suffix}</span>
-          </>
+          <SlotCounter
+            value={number}
+            duration={2}
+            animateUnchanged={true}
+            useMonospaceWidth={true}
+            charClassName="inline-block"
+          />
         ) : (
-          <>0{suffix}</>
+          0
         )}
+        <span className="text-2xl md:text-3xl ml-1">{suffix}</span>
       </div>
     </div>
   );
