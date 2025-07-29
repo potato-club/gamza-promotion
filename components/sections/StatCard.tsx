@@ -38,7 +38,7 @@ export function StatCard({ number, suffix, label }: StatCardProps) {
   return (
     <div
       ref={cardRef}
-      className="relative text-center p-6 transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl"
+      className="relative text-center px-4 py-10 transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl"
       style={{
         background: '#272C2F',
         border: '1px solid transparent',
@@ -55,19 +55,21 @@ export function StatCard({ number, suffix, label }: StatCardProps) {
       }}
     >
       <div className="text-gray-400 text-xs mb-1">{label}</div>
-      <div className="text-3xl md:text-4xl font-bold text-white">
+      <div className="text-3xl md:text-4xl font-bold text-white leading-none">
         {shouldAnimate ? (
-          <SlotCounter
-            value={number}
-            duration={2}
-            animateUnchanged={true}
-            useMonospaceWidth={true}
-            charClassName="inline-block"
-          />
+          <>
+            <SlotCounter
+              value={number}
+              duration={2}
+              animateUnchanged={true}
+              useMonospaceWidth={true}
+              charClassName="inline-block align-baseline"
+            />
+            <span className="align-baseline">{suffix}</span>
+          </>
         ) : (
-          0
+          <>0{suffix}</>
         )}
-        <span className="text-2xl md:text-3xl ml-1">{suffix}</span>
       </div>
     </div>
   );
