@@ -34,7 +34,7 @@ export function ProjectResultsSection() {
           프로젝트 결과물
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 mb-11">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 mb-11">
           {mainProjects.map((project, index) => (
             <Card
               key={index}
@@ -71,7 +71,7 @@ export function ProjectResultsSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Marquee가 화면 전체 폭으로 표시되도록 컨테이너 밖으로 분리 */}
@@ -87,8 +87,8 @@ export function ProjectResultsSection() {
               key={i}
               className="relative aspect-square overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl mx-2"
               style={{
-                width: "180px",
-                height: "180px",
+                width: "270px",
+                height: "160px",
                 background: '#272C2F',
                 border: '1px solid transparent',
                 backgroundImage: `
@@ -116,6 +116,8 @@ export function ProjectResultsSection() {
           ))}
         </Marquee>
       </div>
+
+      {/* 더보기 버튼 추가 */}
     </section>
   );
 }
