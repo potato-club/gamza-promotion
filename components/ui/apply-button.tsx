@@ -31,7 +31,7 @@ export function ApplyButton({ className = "", size = "lg" }: ApplyButtonProps) {
         onClick={handleApplyClick}
         className={`bg-blue-500 hover:bg-blue-600 text-white rounded-full font-medium ${sizeClasses[size]} ${className}`}
       >
-        10기 지원하기
+        10기 알림받기
         <ArrowRight className={`${iconSizes[size]}`} />
       </Button>
       {/* <Link href="/">

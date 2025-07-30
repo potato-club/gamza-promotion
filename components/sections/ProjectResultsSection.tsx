@@ -17,14 +17,11 @@ const mainProjects = [
 ];
 
 const subProjects = [
-  { image: "/placeholder.svg?height=200&width=200&text=Sub+1" },
-  { image: "/placeholder.svg?height=200&width=200&text=Sub+2" },
-  // { image: "/placeholder.svg?height=200&width=200&text=Sub+3" },
-  // { image: "/placeholder.svg?height=200&width=200&text=Sub+4" },
-  // { image: "/placeholder.svg?height=200&width=200&text=Sub+5" },
-  // { image: "/placeholder.svg?height=200&width=200&text=Sub+6" },
-  // { image: "/placeholder.svg?height=200&width=200&text=Sub+7" },
-  // { image: "/placeholder.svg?height=200&width=200&text=Sub+8" },
+  { image: "/projectThumbnails/디저트갤러리.svg", title: "디저트갤러리" },
+  { image: "/projectThumbnails/멍멍.svg", title: "멍멍" },
+  { image: "/projectThumbnails/멍해.svg", title: "멍해" },
+  { image: "/projectThumbnails/이지포토.svg", title: "이지포토" },
+  { image: "/projectThumbnails/코디다이어리.svg", title: "코디다이어리" },
 ];
 
 export function ProjectResultsSection() {
@@ -86,31 +83,19 @@ export function ProjectResultsSection() {
           {subProjects.map((project, i) => (
             <Card
               key={i}
-              className="relative overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl mx-2 cursor-pointer"
+              className="relative overflow-hidden transition-all duration-300 rounded-xl mx-2 cursor-pointer border-none"
               style={{
                 width: "270px",
                 height: "158px", // 270 * (233/398) ≈ 158
-                background: '#272C2F',
-                border: '1px solid transparent',
-                backgroundImage: `
-                  linear-gradient(#272C2F, #272C2F),
-                  linear-gradient(315deg, 
-                    rgba(248, 250, 251, 0.4) 0%, 
-                    rgba(128, 128, 128, 0.2) 50%,
-                    rgba(128, 128, 128, 0.1) 100%
-                  )
-                `,
-                backgroundOrigin: 'border-box',
-                backgroundClip: 'padding-box, border-box'
               }}
             >
               <CardContent className="p-0 h-full">
                 <Image
                   src={project.image}
-                  alt={`Sub project ${i + 1}`}
+                  alt={project.title || `Sub project ${i + 1}`}
                   width={270}
                   height={158}
-                  className="w-full h-full object-cover opacity-70 rounded-xl"
+                  className="w-full h-full object-cover rounded-xl"
                 />
               </CardContent>
             </Card>
