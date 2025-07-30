@@ -86,7 +86,7 @@ export function ProjectResultsSection() {
           {subProjects.map((project, i) => (
             <Card
               key={i}
-              className="relative overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl mx-2"
+              className="relative overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl mx-2 cursor-pointer"
               style={{
                 width: "270px",
                 height: "158px", // 270 * (233/398) ≈ 158

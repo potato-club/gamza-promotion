@@ -133,7 +133,7 @@ export default function ProjectsPage() {
           {filteredProjects.map((project) => (
             <Card
               key={project.id}
-              className="relative overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl bg-transparent border border-transparent"
+              className="relative overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl bg-transparent border border-transparent cursor-pointer"
             >
               <CardContent className="p-0">
                 <div className="aspect-[398/233] bg-gray-900/50 rounded-xl">
