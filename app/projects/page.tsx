@@ -105,10 +105,10 @@ export default function ProjectsPage() {
               const ProjectCard = (
                 <Card
                   key={project.id}
-                  className="relative overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl bg-transparent border border-transparent cursor-pointer"
+                  className={`relative overflow-hidden transition-all duration-300 rounded-xl bg-transparent border-transparent ${project.url ? 'hover:bg-gray-800/80 backdrop-blur-sm border cursor-pointer' : ''}`}
                 >
                   <CardContent className="p-0">
-                    <div className="aspect-[398/233] bg-gray-900/50 rounded-xl">
+                    <div className={`aspect-[398/233] rounded-xl ${project.url ? 'bg-gray-900/50' : ''}`}>
                       <Image
                         src={project.thumbnailUrl || "/placeholder.svg"}
                         alt={project.title}
