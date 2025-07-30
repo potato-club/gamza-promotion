@@ -9,7 +9,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-gray-800/50">
-      <div className="mx-8 flex flex-col items-start justify-between gap-6 py-8 px-6 md:flex-row md:items-start">
+      <div className="mx-8 flex flex-col items-center justify-center gap-6 py-12 px-6 md:flex-row md:items-start md:justify-between">
         <div className="text-center md:text-left flex flex-col items-center md:items-start gap-4">
           <h3 className="text-3xl font-bold mb-1">GAMZA</h3>
           <p className="text-gray-400 text-sm mb-2">
@@ -20,7 +20,7 @@ export function Footer() {
           </Link>
           <p className="text-sm text-gray-700">© 2025 GAMZA. All Rights Reserved.</p>
         </div>
-        <div className="flex items-start gap-10 md:mt-4">
+        <div className="flex items-center justify-center gap-10 md:items-start md:mt-4">
           <Link
             href="/"
             className={`text-sm hover:text-white transition-colors ${pathname === "/" ? "text-[#F8FAFB]" : "text-gray-400"
