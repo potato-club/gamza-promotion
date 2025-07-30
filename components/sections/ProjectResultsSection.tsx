@@ -17,11 +17,11 @@ const mainProjects = [
 ];
 
 const subProjects = [
-  { image: "/projectThumbnails/디저트갤러리.svg", title: "디저트갤러리" },
-  { image: "/projectThumbnails/멍멍.svg", title: "멍멍" },
-  { image: "/projectThumbnails/멍해.svg", title: "멍해" },
-  { image: "/projectThumbnails/이지포토.svg", title: "이지포토" },
-  { image: "/projectThumbnails/코디다이어리.svg", title: "코디다이어리" },
+  { image: "/projectThumbnails/디저트갤러리.svg", title: "디저트갤러리", src: "https://github.com/potato-club/dessert-gallery-back" },
+  { image: "/projectThumbnails/멍멍.svg", title: "멍멍", src: "https://github.com/potato-club/travel-with-pet" },
+  { image: "/projectThumbnails/멍해.svg", title: "멍해", src: "https://github.com/potato-club/meonghae_back" },
+  { image: "/projectThumbnails/이지포토.svg", title: "이지포토", src: "https://github.com/potato-club/photoshop-commission-site" },
+  { image: "/projectThumbnails/코디다이어리.svg", title: "코디다이어리", src: "https://github.com/potato-club/temperature-outfit" },
 ];
 
 export function ProjectResultsSection() {
@@ -81,24 +81,25 @@ export function ProjectResultsSection() {
           autoFill={true}
         >
           {subProjects.map((project, i) => (
-            <Card
-              key={i}
-              className="relative overflow-hidden transition-all duration-300 rounded-xl mx-2 cursor-pointer border-none"
-              style={{
-                width: "270px",
-                height: "158px", // 270 * (233/398) ≈ 158
-              }}
-            >
-              <CardContent className="p-0 h-full">
-                <Image
-                  src={project.image}
-                  alt={project.title || `Sub project ${i + 1}`}
-                  width={270}
-                  height={158}
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </CardContent>
-            </Card>
+            <Link key={i} href={project.src || "#"}>
+              <Card
+                className="relative overflow-hidden transition-all duration-300 rounded-xl mx-2 cursor-pointer border-none"
+                style={{
+                  width: "270px",
+                  height: "158px", // 270 * (233/398) ≈ 158
+                }}
+              >
+                <CardContent className="p-0 h-full">
+                  <Image
+                    src={project.image}
+                    alt={project.title || `Sub project ${i + 1}`}
+                    width={270}
+                    height={158}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </Marquee>
       </div>
