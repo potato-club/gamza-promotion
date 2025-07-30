@@ -37,6 +37,7 @@ export function ActivitiesSection() {
               key={activity.title}
               className="relative p-7 text-center transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl"
               style={{
+                height: "275px",
                 background: '#272C2F',
                 border: '1px solid transparent',
                 backgroundImage: `
@@ -51,11 +52,12 @@ export function ActivitiesSection() {
                 backgroundClip: 'padding-box, border-box'
               }}
             >
-              <CardContent className="flex flex-col items-center p-0">
-                {/* <div className="mb-6">{activity.icon}</div> */}
-                <Image src={activity.src} width={40} height={40} alt={activity.title} className="mb-6" />
-                <h3 className="font-semibold text-lg text-white mb-3">{activity.title}</h3>
-                <p className="text-gray-400 text-sm">{activity.description}</p>
+              <CardContent className="flex flex-col gap-12 h-full p-0 mt-2">
+                <div>
+                  <h3 className="font-semibold text-lg text-white mb-5">{activity.title}</h3>
+                  <p className="text-gray-400 text-sm">{activity.description}</p>
+                </div>
+                <Image src={activity.src} width={60} height={40} alt={activity.title} className="mx-auto" />
               </CardContent>
             </Card>
           ))}

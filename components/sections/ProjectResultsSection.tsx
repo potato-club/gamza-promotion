@@ -86,10 +86,10 @@ export function ProjectResultsSection() {
           {subProjects.map((project, i) => (
             <Card
               key={i}
-              className="relative aspect-square overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl mx-2"
+              className="relative overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl mx-2"
               style={{
                 width: "270px",
-                height: "160px",
+                height: "158px", // 270 * (233/398) ≈ 158
                 background: '#272C2F',
                 border: '1px solid transparent',
                 backgroundImage: `
@@ -108,8 +108,8 @@ export function ProjectResultsSection() {
                 <Image
                   src={project.image}
                   alt={`Sub project ${i + 1}`}
-                  width={180}
-                  height={180}
+                  width={270}
+                  height={158}
                   className="w-full h-full object-cover opacity-70 rounded-xl"
                 />
               </CardContent>
@@ -119,7 +119,7 @@ export function ProjectResultsSection() {
       </div>
 
       {/* 더보기 버튼 추가 */}
-      <div className="text-center mt-10">
+      <div className="text-center mt-16">
         <Link
           href="/projects"
           className="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300"

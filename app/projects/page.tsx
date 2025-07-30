@@ -37,7 +37,7 @@ const projects = [
   {
     id: 5,
     title: "프로젝트명",
-    category: "APP",
+    category: "WEB/APP",
     description: "프로젝트 설명 간단하게—프로젝트의 설명이 간단하게—프로젝트 설명이 간단하게",
     image: "/placeholder.svg?height=200&width=300&text=Project+5",
   },
@@ -58,7 +58,7 @@ const projects = [
   {
     id: 8,
     title: "프로젝트명",
-    category: "APP",
+    category: "WEB/APP",
     description: "프로젝트 설명 간단하게—프로젝트의 설명이 간단하게—프로젝트 설명이 간단하게",
     image: "/placeholder.svg?height=200&width=300&text=Project+8",
   },
@@ -79,7 +79,7 @@ const projects = [
   {
     id: 11,
     title: "프로젝트명",
-    category: "APP",
+    category: "WEB/APP",
     description: "프로젝트 설명 간단하게—프로젝트의 설명이 간단하게—프로젝트 설명이 간단하게",
     image: "/placeholder.svg?height=200&width=300&text=Project+11",
   },
@@ -95,7 +95,7 @@ export default function ProjectsPage() {
     <div className="min-h-screen text-white">
       {/* Projects Section */}
       <section className="px-5 lg:px-7 py-24 mx-auto max-w-6xl">
-        <h1 className="text-3xl sm:text-4xl font-bold text-center mb-14 tracking-tight">프로젝트</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold text-center mt-10 mb-44 tracking-tight">프로젝트</h1>
 
         {/* Category Filter */}
         {/* <div className="flex justify-center space-x-3 mb-14">
@@ -136,24 +136,19 @@ export default function ProjectsPage() {
               className="relative overflow-hidden transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl bg-transparent border border-transparent"
             >
               <CardContent className="p-0">
-                <div className="aspect-[2/1] bg-gray-900/50">
+                <div className="aspect-[398/233] bg-gray-900/50 rounded-xl">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     width={300}
                     height={200}
-                    className="w-full h-full object-cover opacity-70"
+                    className="w-full h-full object-cover opacity-70 rounded-xl"
                   />
                 </div>
-                <div className="p-5 bg-transparent">
+                <div className="p-3 bg-transparent">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="font-semibold text-lg text-white">{project.title}</h3>
-                    <Badge
-                      className={`text-xs px-2 py-1 rounded-full ${project.category === "WEB"
-                        ? "bg-blue-500/20 text-blue-400 border-blue-400/30"
-                        : "bg-green-500/20 text-green-400 border-green-400/30"
-                        }`}
-                    >
+                    <Badge className="text-[16px] rounded-full bg-transparent border-none font-normal p-0" style={{ color: '#ABB5BD' }}>
                       {project.category}
                     </Badge>
                   </div>
