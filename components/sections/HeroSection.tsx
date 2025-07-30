@@ -2,7 +2,7 @@ import { ApplyButton } from "../ui/apply-button";
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center md:items-start md:justify-start overflow-hidden px-6 md:pl-52 md:pt-[calc(100vh/5)]">
+    <section className="relative flex min-h-screen items-center justify-center md:items-start md:justify-start overflow-hidden px-6 md:pl-52 md:pt-[calc(100vh/5)] -mt-16 pt-16">
       {/* Main blue gradient background */}
       <div className="absolute top-1/2 right-0 w-[800px] h-[800px] bg-gradient-to-l from-blue-600/30 via-blue-500/20 to-transparent rounded-full blur-3xl animate-pulse transform -translate-y-1/2"></div>
 
