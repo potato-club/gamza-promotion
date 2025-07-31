@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "GAMZA - 코딩 동아리",
+  title: "감자 - 코딩 동아리",
   description: "프로젝트의 시작, GAMZA. 모두가 함께 고민하고, 함께 성장합니다. 개발에 열정이 있는 당신을 기다립니다!",
-  generator: "이경환",
+  generator: "경환, 지훈, 소영",
   icons: {
     icon: "/logo.svg",
   },
