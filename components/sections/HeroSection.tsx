@@ -17,8 +17,8 @@ export function HeroSection() {
         <source src="/background3.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay for better text readability */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
+      {/* Dark overlay with gradient transition for better text readability */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/40 via-black/50 to-[#0F1112] z-10"></div>
 
       <div className="relative z-20 w-full max-w-2xl">
         <h1 className="text-4xl md:text-5xl lg:text-7xl mb-6 animate-fade-in text-center md:text-left">
