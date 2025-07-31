@@ -47,8 +47,7 @@ export default function ProjectsPage() {
     selectedCategory === "ALL" ? projects : projects.filter((project: Project) => project.category === selectedCategory);
 
   return (
-    <div className="min-h-screen text-white">
-      {/* Projects Section */}
+    <div className="min-h-screen text-white" >
       <section className="px-5 lg:px-7 py-24 mx-auto max-w-6xl">
         <h1 className="text-3xl sm:text-4xl font-bold text-center mt-10 mb-44 tracking-tight">프로젝트</h1>
 
@@ -100,7 +99,7 @@ export default function ProjectsPage() {
 
         {/* Projects Grid */}
         {!loading && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 animate-fade-in" style={{ animationDuration: "2s" }}>
             {filteredProjects.map((project: Project) => {
               const ProjectCard = (
                 <Card
