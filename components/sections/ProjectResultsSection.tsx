@@ -3,25 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 
-const mainProjects = [
-  {
-    title: "프로젝트명",
-    description: "프로젝트 설명 간단하게-- 프로젝트 설명 간단하게-- 프로젝트 설명 간단하게-- 프로젝트 설명 간단하게--",
-    image: "/placeholder.svg?height=250&width=400&text=Project+1",
-  },
-  {
-    title: "프로젝트명",
-    description: "프로젝트 설명 간단하게-- 프로젝트 설명 간단하게-- 프로젝트 설명 간단하게-- 프로젝트 설명 간단하게--",
-    image: "/placeholder.svg?height=250&width=400&text=Project+2",
-  },
-];
 
-const subProjects = [
-  { image: "/projectThumbnails/디저트갤러리.svg", title: "디저트갤러리", src: "https://github.com/potato-club/dessert-gallery-back" },
-  { image: "/projectThumbnails/멍멍.svg", title: "멍멍", src: "https://github.com/potato-club/travel-with-pet" },
-  { image: "/projectThumbnails/멍해.svg", title: "멍해", src: "https://github.com/potato-club/meonghae_back" },
-  { image: "/projectThumbnails/이지포토.svg", title: "이지포토", src: "https://github.com/potato-club/photoshop-commission-site" },
-  { image: "/projectThumbnails/코디다이어리.svg", title: "코디다이어리", src: "https://github.com/potato-club/temperature-outfit" },
+const projects = [
+  { image: "/projectThumbnails/DessertGallery.svg", title: "디저트갤러리", src: "https://github.com/potato-club/dessert-gallery-back" },
+  { image: "/projectThumbnails/MeongMeong.svg", title: "멍멍", src: "https://github.com/potato-club/travel-with-pet" },
+  { image: "/projectThumbnails/MeongHae.svg", title: "멍해", src: "https://github.com/potato-club/meonghae_back" },
+  { image: "/projectThumbnails/GamzaTechBlog.svg", title: "감자기술블로그", src: "https://github.com/potato-club/GamzaTechBlog-back" },
+  { image: "/projectThumbnails/Luview.svg", title: "러뷰", src: "https://github.com/potato-club/Luview-back" },
+  { image: "/projectThumbnails/EasyPhoto.svg", title: "이지포토", src: "https://github.com/potato-club/photoshop-commission-site" },
+  { image: "/projectThumbnails/CodyDiary.svg", title: "코디다이어리", src: "https://github.com/potato-club/temperature-outfit" },
 ];
 
 export function ProjectResultsSection() {
@@ -80,7 +70,7 @@ export function ProjectResultsSection() {
           className="overflow-hidden"
           autoFill={true}
         >
-          {subProjects.map((project, i) => (
+          {projects.map((project, i) => (
             <Link key={i} href={project.src || "#"}>
               <Card
                 className="relative overflow-hidden transition-all duration-300 rounded-xl mx-2 cursor-pointer border-none"
