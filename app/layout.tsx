@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "프로젝트의 시작, GAMZA. 모두가 함께 고민하고, 함께 성장합니다. 개발에 열정이 있는 당신을 기다립니다!",
   generator: "경환, 지훈, 소영",
   icons: {
-    icon: "/logo.svg",
+    icon: "/logo/logo.svg",
   },
 };
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="min-h-screen text-white bg-[#0F1112]">
-        <LenisScroller /> {/* 여기에 추가 */}
+        <LenisScroller />
         <Header />
         <main>{children}</main>
         <Footer />

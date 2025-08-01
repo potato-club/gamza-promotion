@@ -28,7 +28,7 @@ export function ProjectResultsSection() {
   return (
     <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 lg:px-7">
-        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-14">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-28">
           프로젝트 결과물
         </h2>
 

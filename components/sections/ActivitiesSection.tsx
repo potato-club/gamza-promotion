@@ -5,22 +5,22 @@ const activities = [
   {
     title: "정기 세미나 및 스터디",
     description: "매주 스터디를 통해 함께 공부하며 정기적으로 세미나를 진행합니다.",
-    src: "/activityIcon1.svg",
+    src: "/icons/activityIcon1.svg",
   },
   {
     title: "개발 네트워킹 및 멘토링",
     description: "개발 공부에 대한 고민에 대해 조언을 구하며 함께 해결해갑니다.",
-    src: "/activityIcon2.svg",
+    src: "/icons/activityIcon2.svg",
   },
   {
     title: "해커톤 및 공모전",
     description: "해커톤, 공모전에 참여하여 도전의 기회를 가집니다.",
-    src: "/activityIcon3.svg",
+    src: "/icons/activityIcon3.svg",
   },
   {
     title: "프로젝트 기획 및 개발",
     description: "세미나 및 스터디를 직접 기획하고 동아리 프로젝트를 개발합니다.",
-    src: "/activityIcon4.svg",
+    src: "/icons/activityIcon4.svg",
   },
 ];
 
@@ -28,7 +28,7 @@ export function ActivitiesSection() {
   return (
     <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 lg:px-7">
-        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-14">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-28">
           활동 내용
         </h2>
         <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">

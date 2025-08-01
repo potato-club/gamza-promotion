@@ -30,7 +30,7 @@ export function HeroSection() {
         muted
         playsInline
       >
-        <source src="/background2.mp4" type="video/mp4" />
+        <source src="/background.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay with gradient transition for better text readability */}

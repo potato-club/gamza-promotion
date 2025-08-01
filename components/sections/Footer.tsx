@@ -16,7 +16,7 @@ export function Footer() {
             모두가 함께 고민하고, 함께 성장합니다.<br /> 개발에 열정이 있는 당신을 기다립니다.
           </p>
           <Link href="https://github.com/potato-club" aria-label="Github" className="text-gray-400 hover:text-white transition-colors">
-            <Image src="/githubIcon.svg" alt="Github" width={24} height={24} />
+            <Image src="/icons/githubIcon.svg" alt="Github" width={24} height={24} />
           </Link>
           <p className="text-sm text-gray-700">© 2025 GAMZA. All Rights Reserved.</p>
         </div>

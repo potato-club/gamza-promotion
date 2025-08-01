@@ -173,3 +173,71 @@ body {
 .animate-glow {
   animation: glow 4s ease-in-out infinite;
 }
+
+/* Scroll Optimization for Lenis */
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Performance optimizations */
+* {
+  will-change: auto;
+}
+
+/* Optimize for smooth scrolling */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth content transitions */
+.content-transition {
+  transition: opacity 0.3s ease-out, 
+              transform 0.3s ease-out;
+  will-change: opacity, transform;
+}
+
+.content-transition-enter {
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+}
+
+.content-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.content-transition-exit {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.content-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.98);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
