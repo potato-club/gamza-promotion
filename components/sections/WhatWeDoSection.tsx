@@ -92,7 +92,7 @@ export function WhatWeDoSection() {
           </Badge>
           <Badge
             className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 transform hover:scale-105 ${selectedRole === "Backend"
-              ? "bg-[#16A34A] bg-opacity-60 border border-[#22C55E] text-white shadow-lg shadow-green-500/25"
+              ? "bg-[#2E6639] bg-opacity-60 border border-[#46A258] text-white shadow-lg shadow-green-500/25"
               : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60 hover:border-gray-500"
               } ${isTransitioning ? 'pointer-events-none' : ''}`}
             onClick={() => handleRoleChange("Backend")}
@@ -101,7 +101,7 @@ export function WhatWeDoSection() {
           </Badge>
           <Badge
             className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 transform hover:scale-105 ${selectedRole === "Designer"
-              ? "bg-[#DB2777] bg-opacity-60 border border-[#EC4899] text-white shadow-lg shadow-pink-500/25"
+              ? "bg-[#891E4E] bg-opacity-60 border border-[#DB428D] text-white shadow-lg shadow-pink-500/25"
               : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60 hover:border-gray-500"
               } ${isTransitioning ? 'pointer-events-none' : ''}`}
             onClick={() => handleRoleChange("Designer")}
