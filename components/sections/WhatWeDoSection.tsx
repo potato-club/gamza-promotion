@@ -119,7 +119,7 @@ export function WhatWeDoSection() {
           className="relative overflow-hidden w-full mx-auto rounded-xl bg-transparent border-none"
         >
           <CardContent className="p-0">
-            <div className="flex items-center justify-center relative">
+            <div className="flex items-center justify-center relative min-h-[400px] sm:min-h-[500px] lg:min-h-[650px]">
               {/* 기존 이미지를 사용 */}
               <div className={`transition-all duration-500 ease-out ${isTransitioning ? 'opacity-0 transform scale-98' : 'opacity-100 transform scale-100'
                 }`}>
