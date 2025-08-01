@@ -1,8 +1,8 @@
-import { LenisScroller } from "@/components/LenisScroller";
 import { Footer } from "@/components/sections/Footer";
 import { Header } from "@/components/sections/Header";
 import type { Metadata } from "next";
 import "./globals.css";
+import { LenisScroller } from "../components/LenisScroller";
 
 export const metadata: Metadata = {
   title: "감자 - 코딩 동아리",

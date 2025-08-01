@@ -5,13 +5,13 @@ import Marquee from "react-fast-marquee";
 
 
 const projects = [
-  { image: "/projectThumbnails/DessertGallery.svg", title: "디저트갤러리", src: "https://github.com/potato-club/dessert-gallery-back" },
-  { image: "/projectThumbnails/MeongMeong.svg", title: "멍멍", src: "https://github.com/potato-club/travel-with-pet" },
-  { image: "/projectThumbnails/MeongHae.svg", title: "멍해", src: "https://github.com/potato-club/meonghae_back" },
-  { image: "/projectThumbnails/GamzaTechBlog.svg", title: "감자기술블로그", src: "https://github.com/potato-club/GamzaTechBlog-back" },
-  { image: "/projectThumbnails/Luview.svg", title: "러뷰", src: "https://github.com/potato-club/Luview-back" },
-  { image: "/projectThumbnails/EasyPhoto.svg", title: "이지포토", src: "https://github.com/potato-club/photoshop-commission-site" },
-  { image: "/projectThumbnails/CodyDiary.svg", title: "코디다이어리", src: "https://github.com/potato-club/temperature-outfit" },
+  { image: "/projectThumbnails/DessertGallery.png", title: "디저트갤러리", src: "https://github.com/potato-club/dessert-gallery-back" },
+  { image: "/projectThumbnails/MeongMeong.png", title: "멍멍", src: "https://github.com/potato-club/travel-with-pet" },
+  { image: "/projectThumbnails/MeongHae.png", title: "멍해", src: "https://github.com/potato-club/meonghae_back" },
+  { image: "/projectThumbnails/GamzaTechBlog.png", title: "감자기술블로그", src: "https://github.com/potato-club/GamzaTechBlog-back" },
+  { image: "/projectThumbnails/Luview.png", title: "러뷰", src: "https://github.com/potato-club/Luview-back" },
+  { image: "/projectThumbnails/EasyPhoto.png", title: "이지포토", src: "https://github.com/potato-club/photoshop-commission-site" },
+  { image: "/projectThumbnails/CodyDiary.png", title: "코디다이어리", src: "https://github.com/potato-club/temperature-outfit" },
 ];
 
 export function ProjectResultsSection() {
