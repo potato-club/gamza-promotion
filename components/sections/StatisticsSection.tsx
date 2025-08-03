@@ -2,9 +2,9 @@ import { StatCard } from "./StatCard";
 
 export function StatisticsSection() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="py-32 sm:pb-56 sm:pt-64">
       <div className="mx-auto max-w-6xl px-5 lg:px-7">
-        <div className="mx-auto max-w-xl lg:max-w-5xl">
+        <div className="w-full">
           <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-14">
             숫자로 보는 감자
           </h2>

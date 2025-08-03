@@ -38,7 +38,7 @@ export function StatCard({ number, suffix, label }: StatCardProps) {
   return (
     <div
       ref={cardRef}
-      className="relative text-center px-4 py-10 transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl"
+      className="relative text-center px-4 py-12 transition-all duration-300 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl"
       style={{
         background: '#272C2F',
         border: '1px solid transparent',

@@ -26,7 +26,7 @@ const activities = [
 
 export function ActivitiesSection() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="py-32 sm:py-56">
       <div className="mx-auto max-w-6xl px-5 lg:px-7">
         <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-28">
           활동 내용

@@ -41,9 +41,9 @@ export function WhatWeDoSection() {
       }, 300); // 적절한 딜레이로 복원
     }, 400); // 원래 속도로 복원
   }; return (
-    <section className="py-24 sm:py-32 relative overflow-hidden">
+    <section className="py-32 sm:py-56 relative overflow-hidden">
       {/* Floating decorative icons */}
-      <div className="absolute top-80 left-72 w-20 h-20 animate-float hidden md:block">
+      {/* <div className="absolute top-80 left-72 w-20 h-20 animate-float hidden md:block">
         <Image
           src="/icons/WhatWedoIcon1.png"
           alt="Decorative icon 1"
@@ -74,7 +74,7 @@ export function WhatWeDoSection() {
           width={200}
           height={200}
         />
-      </div>
+      </div> */}
 
       <div className="mx-auto max-w-6xl px-5 lg:px-7">
         <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20">
@@ -110,7 +110,7 @@ export function WhatWeDoSection() {
           </Badge>
         </div>
 
-        <p className={`text-gray-300 text-center max-w-3xl mx-auto mb-12 whitespace-pre-wrap transition-all duration-500 ease-out ${isTransitioning ? 'opacity-0 transform translate-y-2' : 'opacity-100 transform translate-y-0'
+        <p className={`text-gray-300 text-center max-w-3xl mx-auto whitespace-pre-wrap transition-all duration-500 ease-out ${isTransitioning ? 'opacity-0 transform translate-y-2' : 'opacity-100 transform translate-y-0'
           }`}>
           {roleContent[selectedRole].description}
         </p>
@@ -126,7 +126,7 @@ export function WhatWeDoSection() {
                 <Image
                   src={roleContent[selectedRole].image}
                   alt={`${selectedRole} showcase`}
-                  width={1200}
+                  width={900}
                   height={650}
                   className="rounded-lg"
                 />
