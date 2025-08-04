@@ -6,6 +6,8 @@
 
 <div align="center">
   <img src="public/logo/logo.svg" alt="GAMZA Logo" width="100">
+
+</div>
   <br>
   <br>
   <br>
@@ -173,7 +175,6 @@ pnpm start
 
 ---
 
-<div align="center">
   <img src="public/logo/logo.svg" alt="GAMZA Logo" width="100">
   <br>
   <strong>Made with ❤️ by GAMZA Team</strong>
