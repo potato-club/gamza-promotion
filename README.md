@@ -3,6 +3,7 @@
 > 프로젝트의 시작, GAMZA. 모두가 함께 고민하고, 함께 성장합니다.
 
   <br>
+  <br>
 
 <div align="center">
   <img src="public/logo/logo.svg" alt="GAMZA Logo" width="100">
