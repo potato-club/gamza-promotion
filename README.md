@@ -53,12 +53,13 @@ Next.js 15와 TypeScript를 사용하여 개발된 모던 웹 애플리케이션
 - **Smooth Scrolling**: [@studio-freight/lenis](https://github.com/studio-freight/lenis)
 - **Counter Animation**: [react-slot-counter](https://github.com/alpertuna/react-slot-counter)
 - **Charts**: [Recharts](https://recharts.org/)
-- **Form Handling**: [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
+- **Interactive Flow**: [@xyflow/react](https://reactflow.dev/)
 
 ### Development Tools
-- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Runtime**: [Node.js](https://nodejs.org/)
 - **Linting**: [ESLint](https://eslint.org/)
-- **Code Formatting**: [Prettier](https://prettier.io/)
+- **TypeScript Compiler**: [TypeScript 5](https://www.typescriptlang.org/)
+- **CSS Processing**: [PostCSS](https://postcss.org/)
 - **Version Control**: Git
 
 ## 📦 설치 및 실행
