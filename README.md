@@ -176,8 +176,3 @@ pnpm start
 - 이메일: leegh0702@gmail.com
 
 ---
-
-  <img src="public/logo/logo.svg" alt="GAMZA Logo" width="100">
-  <br>
-  <strong>Made with ❤️ by GAMZA Team</strong>
-</div>
