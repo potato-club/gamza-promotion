@@ -28,7 +28,7 @@ export function ApplyButton({ className = "", size = "lg" }: ApplyButtonProps) {
 
   return (
     <>
-      <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfHFzTwviIJ7XCqwK8OyCwP5-WJIj_sgcPLP8xyqTZrCl_WPA/viewform?usp=dialogs" target="_blank" rel="noopener noreferrer">
+      <Link href="https://docs.google.com/forms/d/e/1FAIpQLSc7R9wxmAF82Gf17GrIyJKSH1sa4nNEv_96itw9ZhDE_0q2hQ/viewform" target="_blank" rel="noopener noreferrer">
         <Button
           // onClick={handleApplyClick}
           className={`bg-blue-500 hover:bg-blue-600 text-white rounded-full font-medium ${sizeClasses[size]} ${className}`}
