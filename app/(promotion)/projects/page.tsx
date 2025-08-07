@@ -3,14 +3,14 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { fetchProjects } from "@/lib/api/projects";
-import { Project } from "@/types/project";
+import { ProjectListResponse, ResponseDtoListProjectListResponse } from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<ProjectListResponse[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -20,7 +20,7 @@ export default function ProjectsPage() {
         setLoading(true);
         setError(null);
 
-        const response = await fetchProjects({
+        const response: ResponseDtoListProjectListResponse = await fetchProjects({
           page: 0,
           size: 10, // 충분한 수의 프로젝트를 가져옴
         });
@@ -42,9 +42,6 @@ export default function ProjectsPage() {
 
     loadProjects();
   }, []);
-
-  const filteredProjects =
-    selectedCategory === "ALL" ? projects : projects.filter((project: Project) => project.category === selectedCategory);
 
   return (
     <div className="min-h-screen text-white" >
@@ -100,7 +97,7 @@ export default function ProjectsPage() {
         {/* Projects Grid */}
         {!loading && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 animate-fade-in" style={{ animationDuration: "2s" }}>
-            {filteredProjects.map((project: Project) => {
+            {projects.map((project: ProjectListResponse) => {
               const ProjectCard = (
                 <Card
                   key={project.id}
@@ -148,7 +145,7 @@ export default function ProjectsPage() {
         )}
 
         {/* Empty State */}
-        {!loading && filteredProjects.length === 0 && (
+        {!loading && projects.length === 0 && (
           <div className="text-center text-gray-400 py-16">
             <p>표시할 프로젝트가 없습니다.</p>
           </div>

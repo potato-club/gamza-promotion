@@ -1,8 +1,7 @@
-import { Footer } from "@/components/sections/Footer";
-import { Header } from "@/components/sections/Header";
+import { ToastProvider, ToastViewport } from "@/components/ui/toast";
 import type { Metadata } from "next";
-import "./globals.css";
 import { LenisScroller } from "../components/LenisScroller";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "감자 - 코딩 동아리",
@@ -22,10 +21,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="min-h-screen text-white bg-[#0F1112]">
-        <LenisScroller />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ToastProvider>
+          <LenisScroller />
+          {children}
+          <ToastViewport />
+        </ToastProvider>
       </body>
     </html>
   );

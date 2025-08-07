@@ -1,4 +1,4 @@
-export interface Project {
+export interface ProjectListResponse {
   id: number;
   title: string;
   category: string;
@@ -7,10 +7,10 @@ export interface Project {
   url?: string;
 }
 
-export interface ApiResponse {
+export interface ResponseDtoListProjectListResponse {
   status: string;
   message: string;
-  data: Project[];
+  data: ProjectListResponse[];
   timestamp: number;
 }
 

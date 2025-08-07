@@ -1,8 +1,8 @@
-import { ApiResponse, PageableRequest } from '@/types/project';
+import { PageableRequest, ResponseDtoListProjectListResponse } from '@/types/project';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.example.com';
 
-export async function fetchProjects(pageable?: Partial<PageableRequest>): Promise<ApiResponse> {
+export async function fetchProjects(pageable?: Partial<PageableRequest>): Promise<ResponseDtoListProjectListResponse> {
   const defaultParams: PageableRequest = {
     page: 0,
     size: 20,
@@ -44,7 +44,7 @@ export async function fetchProjects(pageable?: Partial<PageableRequest>): Promis
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const data: ApiResponse = await response.json();
+    const data: ResponseDtoListProjectListResponse = await response.json();
     return data;
   } catch (error) {
     console.error('Error fetching projects:', error);
