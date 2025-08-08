@@ -122,69 +122,57 @@ export default function InputForm() {
   }
 
   return (
-    <>
-      <Image
-        src="/resultLogo.svg"
-        alt="Description of image"
-        width={260}
-        height={100}
-        className="object-cover rounded-lg"
-      />
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="w-[350px] space-y-6 bg-white p-6 rounded-2xl shadow-md text-black"
-        >
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>
-                  이름 <span className="text-red-500">*</span>
-                </FormLabel>
-                <FormControl>
-                  <Input placeholder="홍길동" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="phoneNumber"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-black">
-                  전화번호 <span className="text-red-500">*</span>
-                </FormLabel>
-                <FormControl>
-                  <Input placeholder="010-1234-5678" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          {/* <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-black">
-                  이메일 <span className="text-red-500">*</span>
-                </FormLabel>
-                <FormControl>
-                  <Input placeholder="email@example.com" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          /> */}
-          <Button type="submit" className="w-full bg-[#007AFF] rounded-2xl">
-            결과 확인하기
-          </Button>
-        </form>
-      </Form>
-    </>
+    <div className="relative w-full min-h-screen bg-[#0F1112]">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[calc(-50%-10px)]">
+        <Image
+          src="/resultLogo.svg"
+          alt="결과 페이지 로고"
+          width={260}
+          height={100}
+          className="absolute bottom-full left-1/2 -translate-x-1/2 object-cover rounded-lg mb-8"
+        />
+
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="w-[350px] space-y-6 bg-white p-6 rounded-2xl shadow-md text-black"
+          >
+            <FormField
+              control={form.control}
+              name="username"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>
+                    이름 <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input placeholder="홍길동" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phoneNumber"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-black">
+                    전화번호 <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input placeholder="010-1234-5678" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button type="submit" className="w-full bg-[#007AFF] rounded-2xl">
+              결과 확인하기
+            </Button>
+          </form>
+        </Form>
+      </div>
+    </div>
   );
 }
