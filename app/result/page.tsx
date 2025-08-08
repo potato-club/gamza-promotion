@@ -55,7 +55,7 @@ export default function InputForm() {
 
   if (temp === 1) {
     return (
-      <div className="w-[350px] space-y-6 bg-white p-6 rounded-2xl shadow-md text-black">
+      <div className="w-[350px] space-y-6 bg-white px-6 py-12 rounded-2xl shadow-md text-black">
         <Image
           src="/non-pass.svg"
           alt="Description of image"
@@ -77,19 +77,19 @@ export default function InputForm() {
             <p>앞으로의 모든 활동을 응원하겠습니다!</p>
           </div>
         </div>
-        <Button
+        {/* <Button
           onClick={() => setTemp(0)}
           className="w-full text-[#007AFF] rounded-2xl bg-transparent hover:bg-transparent"
         >
           이전으로 돌아가기
-        </Button>
+        </Button> */}
       </div>
     );
   }
 
   if (temp === 2) {
     return (
-      <div className="w-[350px] space-y-6 bg-white p-6 rounded-2xl shadow-md text-black">
+      <div className="w-[350px] space-y-6 bg-white px-6 py-12 rounded-2xl shadow-md text-black">
         <Image
           src="/pass.svg"
           alt="Description of image"
@@ -111,12 +111,12 @@ export default function InputForm() {
             <p>자세한 일정은 곧 안내드리겠습니다 :)</p>
           </div>
         </div>
-        <Button
+        {/* <Button
           onClick={() => setTemp(0)}
           className="w-full text-[#007AFF] rounded-2xl bg-transparent hover:bg-transparent"
         >
           이전으로 돌아가기
-        </Button>
+        </Button> */}
       </div>
     );
   }
