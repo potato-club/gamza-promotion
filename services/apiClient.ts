@@ -1,5 +1,16 @@
 import ky from "ky";
 
+class ApiError extends Error {
+  status: number;
+  body: any;
+  constructor(message: string, status: number, body: any) {
+    super(message);
+    this.name = "ApiError";
+    this.status = status;
+    this.body = body;
+  }
+}
+
 const apiClient = ky.create({
   prefixUrl: process.env.NEXT_PUBLIC_API_URL,
   headers: {
@@ -21,14 +32,16 @@ const apiClient = ky.create({
         if (!response.ok) {
           // 응답 객체에서 오류 메시지를 추출하려고 시도
           let errorMessage = `HTTP error! status: ${response.status}`;
+          let errorBody: any = null;
           try {
-            const errorBody = await response.json();
+            errorBody = await response.json();
             errorMessage += ` - ${JSON.stringify(errorBody)}`; // body 내용을 추가
           } catch (parseError) {
             console.error("Failed to parse error response body:", parseError);
             errorMessage += " - Failed to parse error response body";
           }
-          throw new Error(errorMessage);
+          // throw a structured error so callers can inspect status/body
+          throw new ApiError(errorMessage, response.status, errorBody);
         }
       },
     ],
