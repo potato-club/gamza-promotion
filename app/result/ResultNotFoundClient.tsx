@@ -11,12 +11,12 @@ export default function ResultNotFoundClient({
   const router = useRouter();
 
   useEffect(() => {
-    // show alert then replace the URL to clear query params
+    // show alert
     if (typeof window !== "undefined") {
       alert(message);
-      router.replace("/result");
+      // Removed router.replace("/result"); to prevent infinite loop
     }
-  }, [message, router]);  
+  }, [message]); // Removed router from dependency array as it's not used for navigation anymore
 
   return null;
 }

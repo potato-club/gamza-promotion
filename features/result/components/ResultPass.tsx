@@ -4,7 +4,7 @@ type Props = { name?: string };
 
 export default function ResultPass({ name }: Props) {
   return (
-    <div className="w-[350px] space-y-6 bg-white px-6 py-12 rounded-2xl shadow-md text-black">
+    <div className="w-[350px] space-y-6 bg-white px-6 py-12 rounded-2xl shadow-md text-black animate-fade-in">
       <Image
         src="/pass.svg"
         alt="Description of image"
