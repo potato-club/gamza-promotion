@@ -5,9 +5,9 @@
 
 "use client";
 
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useEffect, useState } from "react";
 import { Header } from "./Header";
+import { useIsMobile } from "../../../../shared/lib/use-mobile";
 
 export function HeaderTest() {
   const isMobile = useIsMobile();

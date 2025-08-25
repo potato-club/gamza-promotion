@@ -10,6 +10,6 @@ export { ThemeProvider } from "./ui/theme-provider";
 export { default as apiClient } from "./api/apiClient";
 
 // Lib exports
-export { default as useMobile } from "./lib/use-mobile";
+export { useIsMobile as useMobile } from "./lib/use-mobile";
 export { useToast } from "./lib/use-toast";
 export { cn } from "./lib/utils";
