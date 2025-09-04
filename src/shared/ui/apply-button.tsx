@@ -28,7 +28,16 @@ export function ApplyButton({ className = "", size = "lg" }: ApplyButtonProps) {
 
   return (
     <>
-      <Link
+      <Link href="/result" target="_blank" rel="noopener noreferrer">
+        <Button
+          // onClick={handleApplyClick}
+          className={`bg-blue-500 hover:bg-blue-600 text-white rounded-full font-medium ${sizeClasses[size]} ${className}`}
+        >
+          10기 합격자 조회
+          <ArrowRight className={`${iconSizes[size]}`} />
+        </Button>
+      </Link>
+      {/* <Link
         href="https://docs.google.com/forms/d/1P7LHhvtTi2qGAHS2pGTM1bT9_9DtakId1MfYmi-N6zQ/viewform?edit_requested=true"
         target="_blank"
         rel="noopener noreferrer"
@@ -40,7 +49,7 @@ export function ApplyButton({ className = "", size = "lg" }: ApplyButtonProps) {
           11기 알림받기
           <ArrowRight className={`${iconSizes[size]}`} />
         </Button>
-      </Link>
+      </Link> */}
 
       {/* <Link href="/">
             <Button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-2 text-sm font-medium">
