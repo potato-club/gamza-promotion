@@ -18,17 +18,19 @@ export function HeroSection() {
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/40 via-black/50 to-[#0F1112] z-10"></div>
 
       <div className="relative z-20 w-full max-w-2xl">
-        <h1 className="text-4xl md:text-5xl lg:text-7xl mb-6 text-center md:text-left">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl mb-2 text-center md:text-left">
           {/* <span className="text-white font-bold">GAMZA</span> */}
-          <TextType
-            as="p"
-            text={["프로젝트의 시작\nGAMZA"]}
-            typingSpeed={100}
-            pauseDuration={3000}
-            showCursor={true}
-            cursorCharacter="_"
-            className="whitespace-pre-wrap  text-white font-bold leading-none align-top"
-          />
+          <div className="h-[6rem] md:h-[8rem] lg:h-[158px] flex items-start">
+            <TextType
+              as="p"
+              text={["프로젝트의 시작\nGAMZA"]}
+              typingSpeed={100}
+              pauseDuration={3000}
+              showCursor={true}
+              cursorCharacter="_"
+              className="whitespace-pre-wrap text-white font-bold leading-none align-top"
+            />
+          </div>
         </h1>
         <p
           className="text-gray-300 text-base md:text-lg mb-8 max-w-xl animate-fade-in text-center md:text-left md:mx-0 mx-auto"
