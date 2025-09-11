@@ -2,51 +2,14 @@ import { Card, CardContent } from "@/shared/ui/card";
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
-
-const projects = [
-  {
-    image: "/projectThumbnails/DessertGallery.png",
-    title: "디저트갤러리",
-    src: "https://github.com/potato-club/dessert-gallery-back",
-  },
-  {
-    image: "/projectThumbnails/MeongMeong.png",
-    title: "멍멍",
-    src: "https://github.com/potato-club/travel-with-pet",
-  },
-  {
-    image: "/projectThumbnails/MeongHae.png",
-    title: "멍해",
-    src: "https://github.com/potato-club/meonghae_back",
-  },
-  {
-    image: "/projectThumbnails/GamzaTechBlog.png",
-    title: "감자기술블로그",
-    src: "https://github.com/potato-club/GamzaTechBlog-back",
-  },
-  {
-    image: "/projectThumbnails/Luview.png",
-    title: "러뷰",
-    src: "https://github.com/potato-club/Luview-back",
-  },
-  {
-    image: "/projectThumbnails/EasyPhoto.png",
-    title: "이지포토",
-    src: "https://github.com/potato-club/photoshop-commission-site",
-  },
-  {
-    image: "/projectThumbnails/CodyDiary.png",
-    title: "코디다이어리",
-    src: "https://github.com/potato-club/temperature-outfit",
-  },
-];
+import { PROJECT_RESULTS_CONSTANTS } from "../../constants/projectResultsSection";
 
 export function ProjectResultsSection() {
   return (
     <section className="py-32 sm:pb-64 sm:pt-56">
       <div className="mx-auto max-w-6xl px-5 lg:px-7">
         <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-28">
-          프로젝트 결과물
+          {PROJECT_RESULTS_CONSTANTS.SECTION_TITLE}
         </h2>
 
         {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 mb-11">
@@ -92,26 +55,26 @@ export function ProjectResultsSection() {
       {/* Marquee가 화면 전체 폭으로 표시되도록 컨테이너 밖으로 분리 */}
       <div className="w-full">
         <Marquee
-          speed={80}
+          speed={PROJECT_RESULTS_CONSTANTS.MARQUEE_SPEED}
           pauseOnHover={true}
           className="overflow-hidden"
           autoFill={true}
         >
-          {projects.map((project, i) => (
+          {PROJECT_RESULTS_CONSTANTS.PROJECTS.map((project, i) => (
             <Link key={i} href={project.src || "#"}>
               <Card
                 className="relative overflow-hidden transition-all duration-300 rounded-xl mx-2 cursor-pointer border-none"
                 style={{
-                  width: "270px",
-                  height: "158px", // 270 * (233/398) ≈ 158
+                  width: `${PROJECT_RESULTS_CONSTANTS.CARD_DIMENSIONS.width}px`,
+                  height: `${PROJECT_RESULTS_CONSTANTS.CARD_DIMENSIONS.height}px`,
                 }}
               >
                 <CardContent className="p-0 h-full">
                   <Image
                     src={project.image}
                     alt={project.title || `Sub project ${i + 1}`}
-                    width={270}
-                    height={158}
+                    width={PROJECT_RESULTS_CONSTANTS.CARD_DIMENSIONS.width}
+                    height={PROJECT_RESULTS_CONSTANTS.CARD_DIMENSIONS.height}
                     className="w-full h-full object-cover rounded-xl"
                   />
                 </CardContent>
@@ -124,10 +87,10 @@ export function ProjectResultsSection() {
       {/* 더보기 버튼 추가 */}
       <div className="text-center mt-16">
         <Link
-          href="/projects"
+          href={PROJECT_RESULTS_CONSTANTS.PROJECTS_PAGE_ROUTE}
           className="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300"
         >
-          더 많은 프로젝트 보기
+          {PROJECT_RESULTS_CONSTANTS.MORE_PROJECTS_BUTTON_TEXT}
         </Link>
       </div>
     </section>

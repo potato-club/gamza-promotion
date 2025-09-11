@@ -4,29 +4,10 @@ import { Badge } from "@/shared/ui/badge";
 import { Card, CardContent } from "@/shared/ui/card";
 import Image from "next/image";
 import { useState } from "react";
-
-type RoleType = "Frontend" | "Backend" | "Designer";
-
-const roleContent = {
-  Frontend: {
-    image: "/roadmap/frontend.svg",
-    description: `사용자가 직접 상호작용하는 웹 인터페이스를 개발하며\n React, Vue.js 등을 활용하여 직관적이고 반응형인 사용자 경험을 구현합니다.`,
-  },
-  Backend: {
-    image: "/roadmap/backend.svg",
-    description:
-      "서버, 데이터베이스, API를 설계하고 구축하며 안정적이고\n 확장 가능한 시스템 아키텍처를 통해 서비스의 핵심 기능을 구현합니다.",
-  },
-  // "App": {
-  //   image: "/placeholder.svg?height=300&width=300&text=App+Developer",
-  //   description: "모바일 애플리케이션을 개발합니다. iOS, Android 플랫폼에 맞춰 최적화된 사용자 경험을 제공합니다."
-  // },
-  Designer: {
-    image: "/roadmap/designer.svg",
-    description:
-      " 사용자 흐름과 UI를 설계해 직관적이고 편리한 화면을 만들며\n 시각 디자인과 인터랙션을 제작해 개발자와 협업하며 완성도를 높입니다.",
-  },
-};
+import {
+  WHAT_WE_DO_CONSTANTS,
+  type RoleType,
+} from "../../constants/whatWeDoSection";
 
 export function WhatWeDoSection() {
   const [selectedRole, setSelectedRole] = useState<RoleType>("Frontend");
@@ -40,8 +21,8 @@ export function WhatWeDoSection() {
       setSelectedRole(newRole);
       setTimeout(() => {
         setIsTransitioning(false);
-      }, 300); // 적절한 딜레이로 복원
-    }, 400); // 원래 속도로 복원
+      }, WHAT_WE_DO_CONSTANTS.TRANSITION_DELAY);
+    }, WHAT_WE_DO_CONSTANTS.ANIMATION_DELAY);
   };
   return (
     <section className="py-32 sm:py-56 relative overflow-hidden">
@@ -81,14 +62,14 @@ export function WhatWeDoSection() {
 
       <div className="mx-auto max-w-6xl px-5 lg:px-7">
         <h2 className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20">
-          What we do
+          {WHAT_WE_DO_CONSTANTS.SECTION_TITLE}
         </h2>
         <div className="flex justify-center flex-wrap gap-3 mb-10">
           <Badge
             className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 transform hover:scale-105 ${
               selectedRole === "Frontend"
-                ? "bg-[#1270D6] bg-opacity-60 border border-[#007AFF] text-white shadow-lg shadow-blue-500/25"
-                : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60 hover:border-gray-500"
+                ? WHAT_WE_DO_CONSTANTS.ROLE_STYLES.Frontend.active
+                : WHAT_WE_DO_CONSTANTS.ROLE_STYLES.Frontend.inactive
             } ${isTransitioning ? "pointer-events-none" : ""}`}
             onClick={() => handleRoleChange("Frontend")}
           >
@@ -97,8 +78,8 @@ export function WhatWeDoSection() {
           <Badge
             className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 transform hover:scale-105 ${
               selectedRole === "Backend"
-                ? "bg-[#2E6639] bg-opacity-60 border border-[#46A258] text-white shadow-lg shadow-green-500/25"
-                : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60 hover:border-gray-500"
+                ? WHAT_WE_DO_CONSTANTS.ROLE_STYLES.Backend.active
+                : WHAT_WE_DO_CONSTANTS.ROLE_STYLES.Backend.inactive
             } ${isTransitioning ? "pointer-events-none" : ""}`}
             onClick={() => handleRoleChange("Backend")}
           >
@@ -107,8 +88,8 @@ export function WhatWeDoSection() {
           <Badge
             className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-all duration-300 transform hover:scale-105 ${
               selectedRole === "Designer"
-                ? "bg-[#891E4E] bg-opacity-60 border border-[#DB428D] text-white shadow-lg shadow-pink-500/25"
-                : "bg-gray-700/60 text-gray-300 border-gray-600 hover:bg-gray-600/60 hover:border-gray-500"
+                ? WHAT_WE_DO_CONSTANTS.ROLE_STYLES.Designer.active
+                : WHAT_WE_DO_CONSTANTS.ROLE_STYLES.Designer.inactive
             } ${isTransitioning ? "pointer-events-none" : ""}`}
             onClick={() => handleRoleChange("Designer")}
           >
@@ -123,7 +104,7 @@ export function WhatWeDoSection() {
               : "opacity-100 transform translate-y-0"
           }`}
         >
-          {roleContent[selectedRole].description}
+          {WHAT_WE_DO_CONSTANTS.ROLE_CONTENT[selectedRole].description}
         </p>
 
         <Card className="relative overflow-hidden w-full mx-auto rounded-xl bg-transparent border-none">
@@ -138,10 +119,10 @@ export function WhatWeDoSection() {
                 }`}
               >
                 <Image
-                  src={roleContent[selectedRole].image}
+                  src={WHAT_WE_DO_CONSTANTS.ROLE_CONTENT[selectedRole].image}
                   alt={`${selectedRole} showcase`}
-                  width={900}
-                  height={650}
+                  width={WHAT_WE_DO_CONSTANTS.IMAGE_DIMENSIONS.width}
+                  height={WHAT_WE_DO_CONSTANTS.IMAGE_DIMENSIONS.height}
                   className="rounded-lg"
                 />
               </div>

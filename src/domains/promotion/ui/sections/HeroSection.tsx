@@ -1,5 +1,6 @@
 import { ApplyButton } from "@/shared/ui/apply-button";
 import TextType from "@/shared/ui/blocks/TextAnimations/TextType/TextType";
+import { DESCRIPTION_TEXT, HERO_CONSTANTS } from "../../constants";
 
 export function HeroSection() {
   return (
@@ -11,7 +12,10 @@ export function HeroSection() {
         muted
         playsInline
       >
-        <source src="/background.mp4" type="video/mp4" />
+        <source
+          src={HERO_CONSTANTS.BACKGROUND_VIDEO_SRC}
+          type={HERO_CONSTANTS.VIDEO_TYPE}
+        />
       </video>
 
       {/* Dark overlay with gradient transition for better text readability */}
@@ -23,24 +27,20 @@ export function HeroSection() {
           <div className="h-[6rem] md:h-[8rem] lg:h-[158px] flex items-start">
             <TextType
               as="p"
-              text={["프로젝트의 시작\nGAMZA"]}
-              typingSpeed={100}
-              pauseDuration={3000}
+              text={[HERO_CONSTANTS.MAIN_TITLE_TEXT]}
+              typingSpeed={HERO_CONSTANTS.TYPING_SPEED}
+              pauseDuration={HERO_CONSTANTS.PAUSE_DURATION}
               showCursor={true}
-              cursorCharacter="_"
+              cursorCharacter={HERO_CONSTANTS.CURSOR_CHARACTER}
               className="whitespace-pre-wrap text-white font-bold leading-none align-top"
             />
           </div>
         </h1>
         <p
           className="text-gray-300 text-base md:text-lg mb-8 max-w-xl animate-fade-in text-center md:text-left md:mx-0 mx-auto"
-          style={{ animationDelay: "0.5s" }}
+          style={{ animationDelay: HERO_CONSTANTS.ANIMATION_DELAY }}
         >
-          모두가 <span className="font-extrabold">함께 고민</span>하고,{" "}
-          <span className="font-extrabold">함께 성장</span>합니다.
-          <br />
-          개발에 <span className="font-extrabold">열정</span>이 있는 당신을
-          기다립니다!
+          {DESCRIPTION_TEXT}
         </p>
         <div className="flex justify-center md:justify-start">
           <ApplyButton />
