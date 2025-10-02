@@ -6,8 +6,7 @@
   <br>
 
 <div align="center">
-  <img src="public/logo/logo.svg" alt="GAMZA Logo" width="100">
-
+  <img src="public/logo/logo.svg" alt="GAMZA Logo" width="100" style="background-color: white; border-radius: 50%; padding: 8px;">
 </div>
   <br>
   <br>
