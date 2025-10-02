@@ -6,7 +6,7 @@
   <br>
 
 <div align="center">
-  <img src="public/logo/logo.svg" alt="GAMZA Logo" width="100" style="background-color: white; border-radius: 50%; padding: 8px;">
+  <img width="1444" height="743" alt="image" src="https://github.com/user-attachments/assets/9177452d-f1df-424b-a18e-12956e60adde" />
 </div>
   <br>
   <br>
