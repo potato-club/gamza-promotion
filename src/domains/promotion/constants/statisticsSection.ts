@@ -7,8 +7,8 @@ export const STATISTICS_CONSTANTS = {
   // Statistics data
   STATS: [
     { number: 6, suffix: "년", label: "운영 기간" },
-    { number: 9, suffix: "기", label: "현재 기수" },
-    { number: 56, suffix: "명", label: "활동 인원" },
+    { number: 10, suffix: "기", label: "현재 기수" },
+    { number: 62, suffix: "명", label: "활동 인원" },
     { number: 30, suffix: "+", label: "프로젝트 수" },
   ],
 } as const;
