@@ -1,5 +1,5 @@
 overrides:
   glob: ">=10.5.0"
 
-onlyBuiltDependencies:
-  - sharp
+allowBuilds:
+  sharp: true
