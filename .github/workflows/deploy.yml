@@ -27,7 +27,9 @@ jobs:
           cache: pnpm
 
       - name: Install Vercel CLI
-        run: npm install -g vercel@latest
+        run: |
+          pnpm add -g vercel@latest
+          echo "$(pnpm root -g)/../bin" >> $GITHUB_PATH
 
       - name: Pull Vercel environment
         run: vercel pull --yes --environment=${{ github.ref_name == 'main' && 'production' || 'preview' }} --token=${{ secrets.VERCEL_TOKEN }}
