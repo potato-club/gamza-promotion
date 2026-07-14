@@ -8,17 +8,34 @@ import Link from "next/link";
 
 // 👈 컴포넌트 함수를 'async'로 선언합니다.
 export default async function ProjectsPage() {
-  // 👈 서버에서 직접 API 함수를 호출하고 'await'로 데이터를 기다립니다.
-  const response = await getProjectList({
+  // 실패 시 null로 폴백한다. 프리렌더가 throw하면 빌드 전체가 실패하므로
+  // 백엔드가 죽어도 배포는 통과시킨다. fetch의 revalidate(60초)가 살아 있어
+  // 백엔드가 복구되면 재배포 없이 목록이 다시 채워진다.
+  // null(요청 실패)과 빈 배열(프로젝트가 실제로 없음)은 다른 화면으로 구분한다.
+  const projects: ProjectListResponse[] | null = await getProjectList({
     page: 0,
     size: 10,
-  });
+  })
+    .then(response => response.data)
+    .catch(error => {
+      console.error("프로젝트 목록 조회 실패:", error);
+      return null;
+    });
 
-  // console.log("API Response:", response);
-
-  const projects: ProjectListResponse[] = response.data;
-
-  // console.log("Projects:", projects);
+  if (!projects) {
+    return (
+      <div className="min-h-screen text-white">
+        <section className="px-5 lg:px-7 py-24 mx-auto max-w-6xl">
+          <div className="text-center text-gray-400 py-16">
+            <p className="mb-2 text-white">요청이 실패했습니다.</p>
+            <p className="text-sm">
+              프로젝트를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.
+            </p>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen text-white">

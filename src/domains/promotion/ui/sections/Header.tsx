@@ -65,7 +65,7 @@ export function Header() {
                 프로젝트
               </Link>
               <Link
-                href="https://app.gamzatech.site/"
+                href="https://app.gamza.site/"
                 className={`hover:text-white transition-colors text-sm px-2 py-1 rounded-md ${
                   pathname === "/blog" ? "text-[#F8FAFB]" : "text-gray-500"
                 }`}

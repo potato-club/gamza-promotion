@@ -36,7 +36,7 @@ export function Footer() {
             프로젝트
           </Link>
           <Link
-            href="https://app.gamzatech.site/"
+            href="https://app.gamza.site/"
             className={`text-sm hover:text-white transition-colors ${pathname === "/blog" ? "text-[#F8FAFB]" : "text-gray-400"
               }`}
           >
