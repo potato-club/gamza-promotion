@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo/logo.svg",
   },
+  verification: {
+    google: "vSGZcyjdLok3eOSLZaVedCsQNFSv9yRPnwyd-pOXkuY",
+  },
 };
 
 const jsonLd = {
