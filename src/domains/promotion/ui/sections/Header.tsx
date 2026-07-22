@@ -13,10 +13,10 @@ export function Header() {
         {/* Mobile Layout - justify-between으로 좌우 정렬 */}
         <div className="flex md:hidden h-16 w-full items-center justify-between">
           {/* Mobile Navigation - Left aligned with optimized touch targets */}
-          <nav className="flex items-center space-x-2">
+          <nav className="flex items-center space-x-1">
             <Link
               href="/"
-              className={`hover:text-white transition-colors text-sm px-3 py-2 rounded-md min-h-[44px] flex items-center ${
+              className={`hover:text-white transition-colors text-sm px-2 py-2 rounded-md min-h-[44px] flex items-center whitespace-nowrap ${
                 pathname === "/" ? "text-[#F8FAFB]" : "text-gray-500"
               }`}
             >
@@ -24,7 +24,7 @@ export function Header() {
             </Link>
             <Link
               href="/projects"
-              className={`hover:text-white transition-colors text-sm px-3 py-2 rounded-md min-h-[44px] flex items-center ${
+              className={`hover:text-white transition-colors text-sm px-2 py-2 rounded-md min-h-[44px] flex items-center whitespace-nowrap ${
                 pathname === "/projects" ? "text-[#F8FAFB]" : "text-gray-500"
               }`}
             >
@@ -32,11 +32,19 @@ export function Header() {
             </Link>
             <Link
               href="https://app.gamza.site/"
-              className={`hover:text-white transition-colors text-sm px-3 py-2 rounded-md min-h-[44px] flex items-center ${
+              className={`hover:text-white transition-colors text-sm px-2 py-2 rounded-md min-h-[44px] flex items-center whitespace-nowrap ${
                 pathname === "/blog" ? "text-[#F8FAFB]" : "text-gray-500"
               }`}
             >
               블로그
+            </Link>
+            <Link
+              href="/result"
+              className={`hover:text-white transition-colors text-sm px-2 py-2 rounded-md min-h-[44px] flex items-center whitespace-nowrap ${
+                pathname === "/result" ? "text-[#F8FAFB]" : "text-gray-500"
+              }`}
+            >
+              결과 확인
             </Link>
           </nav>
 
@@ -71,6 +79,14 @@ export function Header() {
                 }`}
               >
                 블로그
+              </Link>
+              <Link
+                href="/result"
+                className={`hover:text-white transition-colors text-sm px-2 py-1 rounded-md ${
+                  pathname === "/result" ? "text-[#F8FAFB]" : "text-gray-500"
+                }`}
+              >
+                결과 확인
               </Link>
             </nav>
             <ApplyButton size="md" className="shrink-0" />
