@@ -24,7 +24,7 @@ export function HeroSection() {
       <div className="relative z-20 w-full max-w-2xl">
         <h1 className="text-4xl md:text-5xl lg:text-7xl mb-2 text-center md:text-left">
           {/* <span className="text-white font-bold">GAMZA</span> */}
-          <div className="h-[6rem] md:h-[8rem] lg:h-[158px] flex items-start">
+          <div className="h-[6rem] md:h-[8rem] lg:h-[158px] flex items-start justify-center md:justify-start">
             <TextType
               as="p"
               text={[HERO_CONSTANTS.MAIN_TITLE_TEXT]}
